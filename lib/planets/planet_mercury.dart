@@ -6,6 +6,9 @@ import 'package:flutter_solar_system_application/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Тут тоже кодинг-стайл. Корректное название - `PlanetMercury`
+//
+// Я бы назвал `PlanetMercuryScreen`
 // ignore: camel_case_types
 class planet_Mercury extends StatefulWidget {
   const planet_Mercury({Key? key}) : super(key: key);
@@ -14,6 +17,7 @@ class planet_Mercury extends StatefulWidget {
   _planet_MercuryState createState() => _planet_MercuryState();
 }
 
+// Тут аналогично по кодинг-стайлу
 // ignore: camel_case_types
 class _planet_MercuryState extends State<planet_Mercury> {
   final String body_first =
@@ -22,24 +26,39 @@ class _planet_MercuryState extends State<planet_Mercury> {
   Widget build(BuildContext context) {
     return Background(
         child: Scaffold(
+      backgroundColor: background,
+      endDrawer: Drawer(
           backgroundColor: background,
-        endDrawer: Drawer(backgroundColor: background,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            const Nav_Row(svg_planet: 'assets/planet-mercury.svg',),
-            const Nav_Row(svg_planet: 'assets/planet-venus.svg',),
-            const Nav_Row(svg_planet: 'assets/planet-earth.svg',),
-            const Nav_Row(svg_planet: 'assets/planet-mars.svg',),
-            const Nav_Row(svg_planet: 'assets/planet-jupiter.svg',),
-            const Nav_Row(svg_planet: 'assets/planet-saturn.svg',),
-            const Nav_Row(svg_planet: 'assets/planet-uranus.svg',),
-            const Nav_Row(svg_planet: 'assets/planet-neptune.svg',),
-          
-          ],
-        ) 
-        ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              const Nav_Row(
+                svg_planet: 'assets/planet-mercury.svg',
+              ),
+              const Nav_Row(
+                svg_planet: 'assets/planet-venus.svg',
+              ),
+              const Nav_Row(
+                svg_planet: 'assets/planet-earth.svg',
+              ),
+              const Nav_Row(
+                svg_planet: 'assets/planet-mars.svg',
+              ),
+              const Nav_Row(
+                svg_planet: 'assets/planet-jupiter.svg',
+              ),
+              const Nav_Row(
+                svg_planet: 'assets/planet-saturn.svg',
+              ),
+              const Nav_Row(
+                svg_planet: 'assets/planet-uranus.svg',
+              ),
+              const Nav_Row(
+                svg_planet: 'assets/planet-neptune.svg',
+              ),
+            ],
+          )),
       appBar: AppBar(
         backgroundColor: background,
         title: Text(
@@ -64,6 +83,7 @@ class _planet_MercuryState extends State<planet_Mercury> {
               const SizedBox(
                 height: 100,
               ),
+              // Тут высоту и ширину тоже можно было бы оформить в константы
               SvgPicture.asset(
                 'assets/planet-mercury.svg',
                 width: 111,
@@ -83,17 +103,19 @@ class _planet_MercuryState extends State<planet_Mercury> {
               Text(body_first,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.leagueSpartan(
-                      textStyle: const TextStyle(
-                          fontSize: 17,
-                          color: kwhiteBody,
-                          fontWeight: FontWeight.w300,
-                          height: 1.3),)),
-              const SizedBox(height: 40,),           
-              const Planet_info(left: 'ROTATION TIME', right: '58.6 DAYS'),
-              const Planet_info(left: 'REVOLUTION TIME', right: '87.97 DAYS'),
-              const Planet_info(left: 'RADIUS', right: '2,439.7 KM'),
-              const Planet_info(left: 'AVERAGE TEMP.', right: '430°C'),
-
+                    textStyle: const TextStyle(
+                        fontSize: 17,
+                        color: kwhiteBody,
+                        fontWeight: FontWeight.w300,
+                        height: 1.3),
+                  )),
+              const SizedBox(
+                height: 40,
+              ),
+              const PlanetInfo(left: 'ROTATION TIME', right: '58.6 DAYS'),
+              const PlanetInfo(left: 'REVOLUTION TIME', right: '87.97 DAYS'),
+              const PlanetInfo(left: 'RADIUS', right: '2,439.7 KM'),
+              const PlanetInfo(left: 'AVERAGE TEMP.', right: '430°C'),
             ],
           ),
         ),
