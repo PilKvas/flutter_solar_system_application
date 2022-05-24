@@ -37,8 +37,8 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.earthOverviewAsset;
-      mainInfo = AppComponents.earthMainInfoOverview;
+      mainSvgAsset = AppComponents.saturnOverviewAsset;
+      mainInfo = AppComponents.saturnMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -47,8 +47,8 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.earthStructureAsset;
-      mainInfo = AppComponents.earthMainInfoStructure;
+      mainSvgAsset = AppComponents.saturnStructureAsset;
+      mainInfo = AppComponents.saturnMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -57,8 +57,8 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
 
    void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.earthOverviewAsset;
-      mainInfo = AppComponents.earthMainInfoSurface;
+      mainSvgAsset = AppComponents.saturnOverviewAsset;
+      mainInfo = AppComponents.saturnMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;
