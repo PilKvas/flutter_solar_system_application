@@ -216,22 +216,22 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                       ),
                       PlanetInfo(
                         leftSideText: 'ROTATION TIME',
-                        rightSideText: '58.6 DAYS',
+                        rightSideText: AppComponents.venusRotationTime,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'REVOLUTION TIME',
-                        rightSideText: '87.97 DAYS',
+                        rightSideText: AppComponents.venusRevolution,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'RADIUS',
-                        rightSideText: '2,439.7 KM',
+                        rightSideText: AppComponents.venusRadius,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'AVERAGE TEMP.',
-                        rightSideText: '430°C',
+                        rightSideText: AppComponents.venusTemperature,
                         borderInfoColor: borderInfoColor,
                       ),
                     ],

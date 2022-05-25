@@ -7,8 +7,8 @@ import 'package:flutter_solar_system_application/planets/planet_mars_screen.dart
 import 'package:flutter_solar_system_application/planets/planet_mercury_screen.dart';
 import 'package:flutter_solar_system_application/planets/planet_neptune_screen.dart';
 import 'package:flutter_solar_system_application/planets/planet_saturn_screen.dart';
-import 'package:flutter_solar_system_application/planets/planet_uranus_screen.dart.dart';
 import 'package:flutter_solar_system_application/planets/planet_venus_screen.dart';
+import 'package:flutter_solar_system_application/planets/planet_uranus_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

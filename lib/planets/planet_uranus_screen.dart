@@ -219,21 +219,21 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
                       ),
                        PlanetInfo(
                           leftSideText: 'ROTATION TIME',
-                          rightSideText: '58.6 DAYS',
+                          rightSideText: AppComponents.uranusRotationTime,
                           borderInfoColor: borderInfoColor),
                        PlanetInfo(
                         leftSideText: 'REVOLUTION TIME',
-                        rightSideText: '87.97 DAYS',
+                        rightSideText: AppComponents.uranusRevolution,
                         borderInfoColor: borderInfoColor,
                       ),
                        PlanetInfo(
                           leftSideText: 'RADIUS',
-                           rightSideText: '2,439.7 KM',
+                           rightSideText: AppComponents.uranusRadius,
                            borderInfoColor: borderInfoColor,
                       ),
                        PlanetInfo(
                           leftSideText: 'AVERAGE TEMP.',
-                          rightSideText: '430°C',
+                          rightSideText: AppComponents.uranusTemperature,
                           borderInfoColor: borderInfoColor,
                       ),
                     ],

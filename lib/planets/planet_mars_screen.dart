@@ -215,22 +215,22 @@ class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
                       ),
                       PlanetInfo(
                         leftSideText: 'ROTATION TIME',
-                        rightSideText: '58.6 DAYS',
+                        rightSideText: AppComponents.marsRotationTime,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'REVOLUTION TIME',
-                        rightSideText: '87.97 DAYS',
+                        rightSideText: AppComponents.marsRevolution,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'RADIUS',
-                        rightSideText: '2,439.7 KM',
+                        rightSideText: AppComponents.marsRadius,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'AVERAGE TEMP.',
-                        rightSideText: '430°C',
+                        rightSideText: AppComponents.marsTemperature,
                         borderInfoColor: borderInfoColor,
                       ),
                     ],

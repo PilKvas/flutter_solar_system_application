@@ -217,21 +217,21 @@ class _PlanetEarthScreenState extends State<PlanetEarthScreen> {
                       ),
                        PlanetInfo(
                           leftSideText: 'ROTATION TIME',
-                          rightSideText: '58.6 DAYS',
+                          rightSideText: AppComponents.earthRotationTime,
                           borderInfoColor: borderInfoColor),
                        PlanetInfo(
                         leftSideText: 'REVOLUTION TIME',
-                        rightSideText: '87.97 DAYS',
+                        rightSideText: AppComponents.earthRevolution,
                         borderInfoColor: borderInfoColor,
                       ),
                        PlanetInfo(
                           leftSideText: 'RADIUS',
-                           rightSideText: '2,439.7 KM',
+                           rightSideText: AppComponents.earthRadius,
                            borderInfoColor: borderInfoColor,
                       ),
                        PlanetInfo(
                           leftSideText: 'AVERAGE TEMP.',
-                          rightSideText: '430°C',
+                          rightSideText: AppComponents.earthTemperature,
                           borderInfoColor: borderInfoColor,
                       ),
                     ],

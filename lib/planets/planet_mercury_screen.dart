@@ -216,21 +216,21 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
                       ),
                       PlanetInfo(
                         leftSideText: 'ROTATION TIME',
-                        rightSideText: '58.6 DAYS',
+                        rightSideText: AppComponents.mercuryRotationTime,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'REVOLUTION TIME',
-                        rightSideText: '87.97 DAYS',
+                        rightSideText: AppComponents.mercuryRevolution,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                           leftSideText: 'RADIUS',
-                          rightSideText: '2,439.7 KM',
+                          rightSideText: AppComponents.mercuryRadius,
                           borderInfoColor: borderInfoColor),
                       PlanetInfo(
                         leftSideText: 'AVERAGE TEMP.',
-                        rightSideText: '430°C',
+                        rightSideText: AppComponents.mercuryTemperature,
                         borderInfoColor: borderInfoColor,
                       ),
                     ],

@@ -217,22 +217,22 @@ class _PlanetJupiterScreenState extends State<PlanetJupiterScreen> {
                       ),
                       PlanetInfo(
                         leftSideText: 'ROTATION TIME',
-                        rightSideText: '58.6 DAYS',
+                        rightSideText: AppComponents.jupiterRotationTime,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'REVOLUTION TIME',
-                        rightSideText: '87.97 DAYS',
+                        rightSideText: AppComponents.jupiterRevolution,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'RADIUS',
-                        rightSideText: '2,439.7 KM',
+                        rightSideText: AppComponents.jupiterRadius,
                         borderInfoColor: borderInfoColor,
                       ),
                       PlanetInfo(
                         leftSideText: 'AVERAGE TEMP.',
-                        rightSideText: '430°C',
+                        rightSideText: AppComponents.jupiterTemperature,
                         borderInfoColor: borderInfoColor,
                       ),
                     ],

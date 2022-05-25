@@ -119,6 +119,80 @@ class AppComponents {
   static const neptuneMainInfoSurface = "Neptune's atmosphere is 80% hydrogen and 19% helium. A trace amount of methane is also present. Prominent absorption bands of methane exist at wavelengths above 600 nm, in the red and infrared portion of the spectrum.";
     
   /* ------------------------------------ */
+
+
+  /* Mercury rigthSideText */
+
+  static const mercuryRotationTime = "58.6 Days";
+  static const mercuryRevolution = "87.97 Days";
+  static const mercuryRadius = "2,439.7 KM";
+  static const mercuryTemperature = "430°c";
+
+  /*----------------------------*/
+
+  /* Venus rigthSideText */
+
+  static const venusRotationTime = "243 Days";
+  static const venusRevolution = "224.7 Days";
+  static const venusRadius = "6,051.8 KM";
+  static const venusTemperature =  "471°c";
+
+  /*----------------------------*/
+
+  /* Earth rigthSideText */
+
+  static const earthRotationTime = "0.99 Days";
+  static const earthRevolution = "365.26 Days";
+  static const earthRadius = "6,371 KM";
+  static const earthTemperature = "16°c";
+  
+  /*----------------------------*/
+
+  /* Mars rigthSideText */
+
+  static const marsRotationTime = "1.03 Days";
+  static const marsRevolution = "1.88 Years";
+  static const marsRadius = "3,389.5 KM";
+  static const marsTemperature = "-28°c";
+ 
+  /*----------------------------*/
+
+  /* Jupiter rigthSideText */
+
+  static const jupiterRotationTime = "9.93 Hours";
+  static const jupiterRevolution = "11.86 Years";
+  static const jupiterRadius = "69,911 KM";
+  static const jupiterTemperature = "-108°c";
+  
+  /*----------------------------*/  
+
+  /* Saturn rigthSideText */
+
+  static const saturnRotationTime = "10.8 Hours";
+  static const saturnRevolution = "29.46 Years";
+  static const saturnRadius = "58,232 KM";
+  static const saturnTemperature = "-138°c";
+
+  /*----------------------------*/ 
+
+  /* Uranus rigthSideText */
+
+  static const uranusRotationTime = "17.2 Hours";
+  static const uranusRevolution = "84 Years";
+  static const uranusRadius = "25,362 KM";
+  static const uranusTemperature = "-195°c";
+
+  /*----------------------------*/ 
+
+  /* Neptune rigthSideText */
+
+  static const neptuneRotationTime = "16.08 Hours";
+  static const neptuneRevolution = "164.79 Years";
+  static const neptuneRadius = "24,622 KM";
+  static const neptuneTemperature = "-201°c";
+
+  /*----------------------------*/ 
 }
+
 
 
