@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import "package:flutter/material.dart";
 import 'package:flutter_solar_system_application/configurations.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
@@ -182,12 +184,15 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
                             width: mainSizeSvgAsset.width,
                             height: mainSizeSvgAsset.height,
                           ),
-                          Opacity(
-                            opacity: isActiveSurface ? 1 : 0,
-                            child: Image.asset(
-                              secondarySvgAsset,
-                              width: mainSizeSvgAsset.width,
-                              height: mainSizeSvgAsset.height,
+                          Transform.rotate(
+                            angle:  310 * pi /180,
+                            child: Opacity(
+                              opacity: isActiveSurface ? 1 : 0,
+                              child: Image.asset(
+                                secondarySvgAsset,
+                                width: mainSizeSvgAsset.width,
+                                height: mainSizeSvgAsset.height,
+                              ),
                             ),
                           )
                         ],
