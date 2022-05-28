@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_solar_system_application">
+    package="com.example.dev">
    <application
-        android:label="flutter_solar_system_application"
+        android:label="dev"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

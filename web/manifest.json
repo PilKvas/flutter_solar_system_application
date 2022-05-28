@@ -1,6 +1,6 @@
 {
-    "name": "flutter_solar_system_application",
-    "short_name": "flutter_solar_system_application",
+    "name": "dev",
+    "short_name": "dev",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

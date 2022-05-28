@@ -1,4 +1,4 @@
-package com.example.flutter_solar_system_application
+package com.example.dev
 
 import io.flutter.embedding.android.FlutterActivity
 
