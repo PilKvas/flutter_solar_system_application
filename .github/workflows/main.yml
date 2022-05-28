@@ -1,0 +1,27 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.0.1'
+          channel: "stable"
+          
+      - name: Install dependencies
+        run: flutter pub get
+      
+      - name: Run analyzer
+        run: flutter analyze .
+        
+      - name: Run formatter
+        run: flutter format --set-exit-if-changed .
