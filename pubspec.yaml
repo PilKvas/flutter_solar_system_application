@@ -61,7 +61,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/background-stars.png
+    - assets/background-stars.svg
     - assets/planet-mercury.svg
     - assets/planet-venus.svg
     - assets/planet-earth.svg
@@ -70,7 +70,22 @@ flutter:
     - assets/planet-saturn.svg
     - assets/planet-uranus.svg
     - assets/planet-neptune.svg
-    
+    - assets/planet-mercury-internal.svg
+    - assets/planet-venus-internal.svg
+    - assets/planet-earth-internal.svg
+    - assets/planet-mars-internal.svg
+    - assets/planet-jupiter-internal.svg
+    - assets/planet-saturn-internal.svg
+    - assets/planet-uranus-internal.svg
+    - assets/planet-neptune-internal.svg
+    - assets/geology-mercury.png
+    - assets/geology-venus.png
+    - assets/geology-earth.png
+    - assets/geology-mars.png
+    - assets/geology-jupiter.png
+    - assets/geology-saturn.png
+    - assets/geology-uranus.png
+    - assets/geology-neptune.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
