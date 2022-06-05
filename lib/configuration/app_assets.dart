@@ -1,4 +1,3 @@
-
 class AppAssets {
   AppAssets._();
 

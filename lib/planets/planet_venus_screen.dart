@@ -75,7 +75,7 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
           'THE PLANETS',
           style: GoogleFonts.antonio(
               textStyle: const TextStyle(
-                  color: AppColors.kwhite,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 28,
                   letterSpacing: -1.05)),
@@ -113,8 +113,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                                 fontSize: 11,
                                 letterSpacing: 1.96,
                                 color: isActiveOverview
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
+                                    ? AppColors.white
+                                    : AppColors.lightGrey,
                               ),
                             )),
                       ),
@@ -136,8 +136,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                                 fontSize: 11,
                                 letterSpacing: 1.96,
                                 color: isActiveStructure
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
+                                    ? AppColors.white
+                                    : AppColors.lightGrey,
                               ),
                             ),
                           )),
@@ -158,8 +158,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                               fontSize: 11,
                               letterSpacing: 1.96,
                               color: isActiveSurface
-                                  ? AppColors.kwhite
-                                  : AppColors.klighgrey,
+                                  ? AppColors.white
+                                  : AppColors.lightGrey,
                             ),
                           ),
                         ),
@@ -199,7 +199,7 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                             textStyle: const TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.w400,
-                                color: AppColors.kwhite),
+                                color: AppColors.white),
                           )),
                       const SizedBox(height: 40),
                       Text(mainInfo,
@@ -207,7 +207,7 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                           style: GoogleFonts.leagueSpartan(
                             textStyle: const TextStyle(
                                 fontSize: 17,
-                                color: AppColors.kwhiteBody,
+                                color: AppColors.whiteBody,
                                 fontWeight: FontWeight.w300,
                                 height: 1.3),
                           )),

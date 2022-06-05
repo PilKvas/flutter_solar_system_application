@@ -30,7 +30,7 @@ class PlanetInfo extends StatelessWidget {
                 textStyle: const TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 15,
-                    color: AppColors.klighgrey)),
+                    color: AppColors.lightGrey)),
           ),
           Text(
             rightSideText,
@@ -38,7 +38,7 @@ class PlanetInfo extends StatelessWidget {
                 textStyle: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 25,
-                    color: AppColors.kwhite,
+                    color: AppColors.white,
                     letterSpacing: -0.75)),
           ),
         ],

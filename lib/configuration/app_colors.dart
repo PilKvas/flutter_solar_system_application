@@ -5,11 +5,11 @@ class AppColors {
 
   /* Font colors */
 
-  static const kwhite = Colors.white;
-  static const kwhiteBody = Color.fromRGBO(255, 255, 255, 0.7);
+  static const white = Colors.white;
+  static const whiteBody = Color.fromRGBO(255, 255, 255, 0.7);
   static const background = Color.fromRGBO(7, 7, 36, 1);
-  static const kgrey = Color.fromRGBO(7, 7, 36, 1);
-  static const klighgrey = Color.fromRGBO(131, 131, 145, 1);
+  static const grey = Color.fromRGBO(7, 7, 36, 1);
+  static const lightGrey = Color.fromRGBO(131, 131, 145, 1);
   static const borderColor = Color.fromRGBO(216, 216, 216, 0.3);
 
 /*-------------------------------------*/
@@ -28,4 +28,3 @@ class AppColors {
 /*---------------------------------------*/
 
 }
-

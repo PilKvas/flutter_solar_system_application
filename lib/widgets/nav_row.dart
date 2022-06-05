@@ -50,11 +50,11 @@ class NavRow extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       fontSize: 20,
                       letterSpacing: 1.36,
-                      color: AppColors.kwhite,
+                      color: AppColors.white,
                     ),
                   ),
                 ),
-                const Icon(Icons.arrow_right_rounded, color: AppColors.kwhite)
+                const Icon(Icons.arrow_right_rounded, color: AppColors.white)
               ],
             ),
           ),
