@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetMercuryScreen extends StatefulWidget {
 }
 
 class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
-  String mainInfo = AppComponents.mercuryMainInfoOverview;
+  String mainInfo = AppAssets.mercuryMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.mercuryOverviewAsset;
+  String mainSvgAsset = AppAssets.mercuryOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.mercurySurfaceAsset;
+  final String secondarySvgAsset = AppAssets.mercurySurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.mercuryColor;
 
   final Color borderInfoColor = AppColors.mercuryColor;
 
-  final String mainTitle = AppComponents.mercuryTitle;
+  final String mainTitle = AppAssets.mercuryTitle;
 
   static const Size mainSizeSvgAsset = Size.square(111);
 
@@ -36,8 +37,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.mercuryOverviewAsset;
-      mainInfo = AppComponents.mercuryMainInfoOverview;
+      mainSvgAsset = AppAssets.mercuryOverviewAsset;
+      mainInfo = AppAssets.mercuryMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.mercuryStructureAsset;
-      mainInfo = AppComponents.mercuryMainInfoStructure;
+      mainSvgAsset = AppAssets.mercuryStructureAsset;
+      mainInfo = AppAssets.mercuryMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.mercuryOverviewAsset;
-      mainInfo = AppComponents.mercuryMainInfoSurface;
+      mainSvgAsset = AppAssets.mercuryOverviewAsset;
+      mainInfo = AppAssets.mercuryMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;
@@ -74,7 +75,7 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
           'THE PLANETS',
           style: GoogleFonts.antonio(
               textStyle: const TextStyle(
-                  color: AppColors.kwhite,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 28,
                   letterSpacing: -1.05)),
@@ -112,8 +113,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
                                 fontSize: 11,
                                 letterSpacing: 1.96,
                                 color: isActiveOverview
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
+                                    ? AppColors.white
+                                    : AppColors.lightGrey,
                               ),
                             )),
                       ),
@@ -135,8 +136,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
                                 fontSize: 11,
                                 letterSpacing: 1.96,
                                 color: isActiveStructure
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
+                                    ? AppColors.white
+                                    : AppColors.lightGrey,
                               ),
                             ),
                           )),
@@ -157,8 +158,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
                               fontSize: 11,
                               letterSpacing: 1.96,
                               color: isActiveSurface
-                                  ? AppColors.kwhite
-                                  : AppColors.klighgrey,
+                                  ? AppColors.white
+                                  : AppColors.lightGrey,
                             ),
                           ),
                         ),
@@ -198,7 +199,7 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
                             textStyle: const TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.w400,
-                                color: AppColors.kwhite),
+                                color: AppColors.white),
                           )),
                       const SizedBox(height: 40),
                       Text(mainInfo,
@@ -206,7 +207,7 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
                           style: GoogleFonts.leagueSpartan(
                             textStyle: const TextStyle(
                                 fontSize: 17,
-                                color: AppColors.kwhiteBody,
+                                color: AppColors.whiteBody,
                                 fontWeight: FontWeight.w300,
                                 height: 1.3),
                           )),

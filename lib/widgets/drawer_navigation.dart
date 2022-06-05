@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/main_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/nav_row.dart';
 
@@ -16,44 +17,44 @@ class DrawerNavigation extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             NavRow(
-              planetSvgAsset: AppComponents.mercuryOverviewAsset,
+              planetSvgAsset: AppAssets.mercuryOverviewAsset,
               route: MainNavigationRouteNames.planetMercury,
-              planetName: 'Mercury',
+              planetName: AppAssets.mercuryTitle,
             ),
             NavRow(
-              planetSvgAsset: AppComponents.venusOverviewAsset,
+              planetSvgAsset: AppAssets.venusOverviewAsset,
               route: MainNavigationRouteNames.planetVenus,
-              planetName: 'Venus',
+              planetName: AppAssets.venusTitle,
             ),
             NavRow(
-              planetSvgAsset: AppComponents.earthOverviewAsset,
+              planetSvgAsset: AppAssets.earthOverviewAsset,
               route: MainNavigationRouteNames.planetEarth,
-              planetName: 'Earth',
+              planetName: AppAssets.earthTitle,
             ),
             NavRow(
-              planetSvgAsset: AppComponents.marsOverviewAsset,
+              planetSvgAsset: AppAssets.marsOverviewAsset,
               route: MainNavigationRouteNames.planetMars,
-              planetName: 'Mars',
+              planetName: AppAssets.marsTitle,
             ),
             NavRow(
-              planetSvgAsset: AppComponents.jupiterOverviewAsset,
+              planetSvgAsset: AppAssets.jupiterOverviewAsset,
               route: MainNavigationRouteNames.planetJupiter,
-              planetName: 'Jupiter',
+              planetName: AppAssets.jupiterTitle,
             ),
             NavRow(
-              planetSvgAsset: AppComponents.saturnOverviewAsset,
+              planetSvgAsset: AppAssets.saturnOverviewAsset,
               route: MainNavigationRouteNames.planetSaturn,
-              planetName: 'Saturn',
+              planetName: AppAssets.saturnTitle,
             ),
             NavRow(
-              planetSvgAsset: AppComponents.uranusOverviewAsset,
+              planetSvgAsset: AppAssets.uranusOverviewAsset,
               route: MainNavigationRouteNames.planetUranus,
-              planetName: 'Uranus',
+              planetName: AppAssets.uranusTitle,
             ),
             NavRow(
-              planetSvgAsset: AppComponents.neptuneOverviewAsset,
+              planetSvgAsset: AppAssets.neptuneOverviewAsset,
               route: MainNavigationRouteNames.planetUranus,
-              planetName: 'Neptune',
+              planetName: AppAssets.uranusTitle,
             ),
           ],
         ));

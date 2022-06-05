@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetVenusScreen extends StatefulWidget {
 }
 
 class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
-  String mainInfo = AppComponents.venusMainInfoOverview;
+  String mainInfo = AppAssets.venusMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.venusOverviewAsset;
+  String mainSvgAsset = AppAssets.venusOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.venusSurfaceAsset;
+  final String secondarySvgAsset = AppAssets.venusSurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.venusColor;
 
   final Color borderInfoColor = AppColors.venusColor;
 
-  final String mainTitle = AppComponents.venusTitle;
+  final String mainTitle = AppAssets.venusTitle;
 
   static const Size mainSizeSvgAsset = Size.square(256);
 
@@ -36,8 +37,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.venusOverviewAsset;
-      mainInfo = AppComponents.venusMainInfoOverview;
+      mainSvgAsset = AppAssets.venusOverviewAsset;
+      mainInfo = AppAssets.venusMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.venusStructureAsset;
-      mainInfo = AppComponents.venusMainInfoStructure;
+      mainSvgAsset = AppAssets.venusStructureAsset;
+      mainInfo = AppAssets.venusMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.venusOverviewAsset;
-      mainInfo = AppComponents.venusMainInfoSurface;
+      mainSvgAsset = AppAssets.venusOverviewAsset;
+      mainInfo = AppAssets.venusMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;
@@ -74,7 +75,7 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
           'THE PLANETS',
           style: GoogleFonts.antonio(
               textStyle: const TextStyle(
-                  color: AppColors.kwhite,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 28,
                   letterSpacing: -1.05)),
@@ -112,8 +113,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                                 fontSize: 11,
                                 letterSpacing: 1.96,
                                 color: isActiveOverview
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
+                                    ? AppColors.white
+                                    : AppColors.lightGrey,
                               ),
                             )),
                       ),
@@ -135,8 +136,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                                 fontSize: 11,
                                 letterSpacing: 1.96,
                                 color: isActiveStructure
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
+                                    ? AppColors.white
+                                    : AppColors.lightGrey,
                               ),
                             ),
                           )),
@@ -157,8 +158,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                               fontSize: 11,
                               letterSpacing: 1.96,
                               color: isActiveSurface
-                                  ? AppColors.kwhite
-                                  : AppColors.klighgrey,
+                                  ? AppColors.white
+                                  : AppColors.lightGrey,
                             ),
                           ),
                         ),
@@ -198,7 +199,7 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                             textStyle: const TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.w400,
-                                color: AppColors.kwhite),
+                                color: AppColors.white),
                           )),
                       const SizedBox(height: 40),
                       Text(mainInfo,
@@ -206,7 +207,7 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
                           style: GoogleFonts.leagueSpartan(
                             textStyle: const TextStyle(
                                 fontSize: 17,
-                                color: AppColors.kwhiteBody,
+                                color: AppColors.whiteBody,
                                 fontWeight: FontWeight.w300,
                                 height: 1.3),
                           )),

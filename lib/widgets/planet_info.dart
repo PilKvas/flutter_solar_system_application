@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PlanetInfo extends StatelessWidget {
@@ -30,7 +30,7 @@ class PlanetInfo extends StatelessWidget {
                 textStyle: const TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 15,
-                    color: AppColors.klighgrey)),
+                    color: AppColors.lightGrey)),
           ),
           Text(
             rightSideText,
@@ -38,7 +38,7 @@ class PlanetInfo extends StatelessWidget {
                 textStyle: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 25,
-                    color: AppColors.kwhite,
+                    color: AppColors.white,
                     letterSpacing: -0.75)),
           ),
         ],

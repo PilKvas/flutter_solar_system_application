@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetUranusScreen extends StatefulWidget {
 }
 
 class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
-  String mainInfo = AppComponents.uranusMainInfoOverview;
+  String mainInfo = AppAssets.uranusMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.uranusOverviewAsset;
+  String mainSvgAsset = AppAssets.uranusOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.uranusSurfaceAsset;
+  final String secondarySvgAsset = AppAssets.uranusSurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.uranusColor;
 
   final Color borderInfoColor = AppColors.uranusColor;
 
-  final String mainTitle = AppComponents.uranusTitle;
+  final String mainTitle = AppAssets.uranusTitle;
 
   static const Size mainSizeSvgAsset = Size.square(176);
 
@@ -36,8 +37,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.uranusOverviewAsset;
-      mainInfo = AppComponents.uranusMainInfoOverview;
+      mainSvgAsset = AppAssets.uranusOverviewAsset;
+      mainInfo = AppAssets.uranusMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.uranusStructureAsset;
-      mainInfo = AppComponents.uranusMainInfoStructure;
+      mainSvgAsset = AppAssets.uranusStructureAsset;
+      mainInfo = AppAssets.uranusMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.uranusOverviewAsset;
-      mainInfo = AppComponents.uranusMainInfoSurface;
+      mainSvgAsset = AppAssets.uranusOverviewAsset;
+      mainInfo = AppAssets.uranusMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;
@@ -74,7 +75,7 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
           'THE PLANETS',
           style: GoogleFonts.antonio(
               textStyle: const TextStyle(
-                  color: AppColors.kwhite,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 28,
                   letterSpacing: -1.05)),
@@ -112,8 +113,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
                                 fontSize: 11,
                                 letterSpacing: 1.96,
                                 color: isActiveOverview
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
+                                    ? AppColors.white
+                                    : AppColors.lightGrey,
                               ),
                             )),
                       ),
@@ -135,8 +136,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
                                 fontSize: 11,
                                 letterSpacing: 1.96,
                                 color: isActiveStructure
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
+                                    ? AppColors.white
+                                    : AppColors.lightGrey,
                               ),
                             ),
                           )),
@@ -157,8 +158,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
                               fontSize: 11,
                               letterSpacing: 1.96,
                               color: isActiveSurface
-                                  ? AppColors.kwhite
-                                  : AppColors.klighgrey,
+                                  ? AppColors.white
+                                  : AppColors.lightGrey,
                             ),
                           ),
                         ),
@@ -198,7 +199,7 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
                             textStyle: const TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.w400,
-                                color: AppColors.kwhite),
+                                color: AppColors.white),
                           )),
                       const SizedBox(height: 40),
                       Text(mainInfo,
@@ -206,7 +207,7 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
                           style: GoogleFonts.leagueSpartan(
                             textStyle: const TextStyle(
                                 fontSize: 17,
-                                color: AppColors.kwhiteBody,
+                                color: AppColors.whiteBody,
                                 fontWeight: FontWeight.w300,
                                 height: 1.3),
                           )),
