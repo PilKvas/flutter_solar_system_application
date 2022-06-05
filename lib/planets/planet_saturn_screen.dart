@@ -14,7 +14,6 @@ class PlanetSaturnScreen extends StatefulWidget {
 }
 
 class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
-
   String mainInfo = AppComponents.saturnMainInfoOverview;
 
   String mainSvgAsset = AppComponents.saturnOverviewAsset;
@@ -25,7 +24,7 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
 
   final Color borderInfoColor = AppColors.saturnColor;
 
-  final  String mainTitle = AppComponents.saturnTitle;
+  final String mainTitle = AppComponents.saturnTitle;
 
   static const Size mainSizeSvgAsset = Size.square(211);
 
@@ -55,7 +54,7 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
     });
   }
 
-   void surfaceButton() {
+  void surfaceButton() {
     setState(() {
       mainSvgAsset = AppComponents.earthOverviewAsset;
       mainInfo = AppComponents.earthMainInfoSurface;
@@ -122,7 +121,7 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
                           style: ButtonStyle(
                             backgroundColor: isActiveStructure
                                 ? MaterialStateProperty.all(
-                                  buttonBackgroundColor)
+                                    buttonBackgroundColor)
                                 : MaterialStateProperty.all(null),
                             padding: MaterialStateProperty.all(
                                 const EdgeInsets.all(10.0)),
@@ -144,25 +143,24 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
                       TextButton(
                         style: ButtonStyle(
                           backgroundColor: isActiveSurface
-                                ? MaterialStateProperty.all(
-                                    buttonBackgroundColor)
-                                : MaterialStateProperty.all(null),
-                            padding: MaterialStateProperty.all(
-                                const EdgeInsets.all(10.0)),
+                              ? MaterialStateProperty.all(buttonBackgroundColor)
+                              : MaterialStateProperty.all(null),
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.all(10.0)),
                         ),
                         onPressed: surfaceButton,
                         child: Text(
                           'SURFACE',
                           style: GoogleFonts.leagueSpartan(
-                              textStyle: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 11,
-                                letterSpacing: 1.96,
-                                color: isActiveSurface
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
-                              ),
+                            textStyle: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 11,
+                              letterSpacing: 1.96,
+                              color: isActiveSurface
+                                  ? AppColors.kwhite
+                                  : AppColors.klighgrey,
                             ),
+                          ),
                         ),
                       ),
                     ],
@@ -215,24 +213,24 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
                       const SizedBox(
                         height: 40,
                       ),
-                       PlanetInfo(
+                      PlanetInfo(
                           leftSideText: 'ROTATION TIME',
                           rightSideText: '58.6 DAYS',
                           borderInfoColor: borderInfoColor),
-                       PlanetInfo(
+                      PlanetInfo(
                         leftSideText: 'REVOLUTION TIME',
                         rightSideText: '87.97 DAYS',
                         borderInfoColor: borderInfoColor,
                       ),
-                       PlanetInfo(
-                          leftSideText: 'RADIUS',
-                           rightSideText: '2,439.7 KM',
-                           borderInfoColor: borderInfoColor,
+                      PlanetInfo(
+                        leftSideText: 'RADIUS',
+                        rightSideText: '2,439.7 KM',
+                        borderInfoColor: borderInfoColor,
                       ),
-                       PlanetInfo(
-                          leftSideText: 'AVERAGE TEMP.',
-                          rightSideText: '430°C',
-                          borderInfoColor: borderInfoColor,
+                      PlanetInfo(
+                        leftSideText: 'AVERAGE TEMP.',
+                        rightSideText: '430°C',
+                        borderInfoColor: borderInfoColor,
                       ),
                     ],
                   ),

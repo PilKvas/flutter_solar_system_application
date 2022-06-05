@@ -14,7 +14,6 @@ class PlanetJupiterScreen extends StatefulWidget {
 }
 
 class _PlanetJupiterScreenState extends State<PlanetJupiterScreen> {
-
   String mainInfo = AppComponents.jupiterMainInfoOverview;
 
   String mainSvgAsset = AppComponents.jupiterOverviewAsset;
@@ -140,8 +139,7 @@ class _PlanetJupiterScreenState extends State<PlanetJupiterScreen> {
                                     : AppColors.klighgrey,
                               ),
                             ),
-                          )
-                        ),
+                          )),
                       TextButton(
                         style: ButtonStyle(
                           backgroundColor: isActiveSurface
