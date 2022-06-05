@@ -14,7 +14,6 @@ class PlanetMercuryScreen extends StatefulWidget {
 }
 
 class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
-
   String mainInfo = AppComponents.mercuryMainInfoOverview;
 
   String mainSvgAsset = AppComponents.mercuryOverviewAsset;

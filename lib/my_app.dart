@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_solar_system_application/main_navigation.dart';
 
 class MyApp extends StatelessWidget {
-
   static final mainNavigation = MainNavigation();
 
   const MyApp({Key? key}) : super(key: key);

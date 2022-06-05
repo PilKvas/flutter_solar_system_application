@@ -14,7 +14,6 @@ class PlanetNeptuneScreen extends StatefulWidget {
 }
 
 class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
-
   String mainInfo = AppComponents.neptuneMainInfoOverview;
 
   String mainSvgAsset = AppComponents.neptuneOverviewAsset;
@@ -25,7 +24,7 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
 
   final Color borderInfoColor = AppColors.neptuneColor;
 
-  final  String mainTitle = AppComponents.neptuneTitle;
+  final String mainTitle = AppComponents.neptuneTitle;
 
   static const Size mainSizeSvgAsset = Size.square(173);
 
@@ -55,7 +54,7 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
     });
   }
 
-   void surfaceButton() {
+  void surfaceButton() {
     setState(() {
       mainSvgAsset = AppComponents.neptuneOverviewAsset;
       mainInfo = AppComponents.neptuneMainInfoSurface;
@@ -122,7 +121,7 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
                           style: ButtonStyle(
                             backgroundColor: isActiveStructure
                                 ? MaterialStateProperty.all(
-                                  buttonBackgroundColor)
+                                    buttonBackgroundColor)
                                 : MaterialStateProperty.all(null),
                             padding: MaterialStateProperty.all(
                                 const EdgeInsets.all(10.0)),
@@ -144,25 +143,24 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
                       TextButton(
                         style: ButtonStyle(
                           backgroundColor: isActiveSurface
-                                ? MaterialStateProperty.all(
-                                    buttonBackgroundColor)
-                                : MaterialStateProperty.all(null),
-                            padding: MaterialStateProperty.all(
-                                const EdgeInsets.all(10.0)),
+                              ? MaterialStateProperty.all(buttonBackgroundColor)
+                              : MaterialStateProperty.all(null),
+                          padding: MaterialStateProperty.all(
+                              const EdgeInsets.all(10.0)),
                         ),
                         onPressed: surfaceButton,
                         child: Text(
                           'SURFACE',
                           style: GoogleFonts.leagueSpartan(
-                              textStyle: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 11,
-                                letterSpacing: 1.96,
-                                color: isActiveSurface
-                                    ? AppColors.kwhite
-                                    : AppColors.klighgrey,
-                              ),
+                            textStyle: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 11,
+                              letterSpacing: 1.96,
+                              color: isActiveSurface
+                                  ? AppColors.kwhite
+                                  : AppColors.klighgrey,
                             ),
+                          ),
                         ),
                       ),
                     ],
@@ -202,9 +200,7 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.kwhite),
                           )),
-                      const SizedBox(
-                        height: 40
-                      ),
+                      const SizedBox(height: 40),
                       Text(mainInfo,
                           textAlign: TextAlign.center,
                           style: GoogleFonts.leagueSpartan(
@@ -217,24 +213,24 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
                       const SizedBox(
                         height: 40,
                       ),
-                       PlanetInfo(
+                      PlanetInfo(
                           leftSideText: 'ROTATION TIME',
                           rightSideText: '58.6 DAYS',
                           borderInfoColor: borderInfoColor),
-                       PlanetInfo(
+                      PlanetInfo(
                         leftSideText: 'REVOLUTION TIME',
                         rightSideText: '87.97 DAYS',
                         borderInfoColor: borderInfoColor,
                       ),
-                       PlanetInfo(
-                          leftSideText: 'RADIUS',
-                           rightSideText: '2,439.7 KM',
-                           borderInfoColor: borderInfoColor,
+                      PlanetInfo(
+                        leftSideText: 'RADIUS',
+                        rightSideText: '2,439.7 KM',
+                        borderInfoColor: borderInfoColor,
                       ),
-                       PlanetInfo(
-                          leftSideText: 'AVERAGE TEMP.',
-                          rightSideText: '430°C',
-                          borderInfoColor: borderInfoColor,
+                      PlanetInfo(
+                        leftSideText: 'AVERAGE TEMP.',
+                        rightSideText: '430°C',
+                        borderInfoColor: borderInfoColor,
                       ),
                     ],
                   ),

@@ -14,7 +14,6 @@ class PlanetVenusScreen extends StatefulWidget {
 }
 
 class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
-
   String mainInfo = AppComponents.venusMainInfoOverview;
 
   String mainSvgAsset = AppComponents.venusOverviewAsset;
