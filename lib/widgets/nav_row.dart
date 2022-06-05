@@ -3,13 +3,17 @@ import 'package:flutter_solar_system_application/configurations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class NavRow extends StatelessWidget {
   static const Size svgPlanetSize = Size.square(25);
   final String route;
   final String planetSvgAsset;
   final String planetName;
-  const NavRow({Key? key, required this.planetSvgAsset, required this.route, required this.planetName, }) : super(key: key);
+  const NavRow({
+    Key? key,
+    required this.planetSvgAsset,
+    required this.route,
+    required this.planetName,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +23,15 @@ class NavRow extends StatelessWidget {
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 15.0),
           decoration: const BoxDecoration(
-            border: Border(
-              bottom: BorderSide(
-                width: 1.0, color: AppColors.borderColor,
-              )
-            )
-          ),
+              border: Border(
+                  bottom: BorderSide(
+            width: 1.0,
+            color: AppColors.borderColor,
+          ))),
           child: TextButton(
-            style: ButtonStyle(padding: MaterialStateProperty.all(const EdgeInsets.all(25))),
-            onPressed: (){
+            style: ButtonStyle(
+                padding: MaterialStateProperty.all(const EdgeInsets.all(25))),
+            onPressed: () {
               Navigator.pushNamed(context, route);
             },
             child: Row(
@@ -40,7 +44,7 @@ class NavRow extends StatelessWidget {
                   width: svgPlanetSize.width,
                 ),
                 Text(
-                   planetName.toUpperCase(),
+                  planetName.toUpperCase(),
                   style: GoogleFonts.leagueSpartan(
                     textStyle: const TextStyle(
                       fontWeight: FontWeight.w700,
