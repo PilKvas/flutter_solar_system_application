@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetMercuryScreen extends StatefulWidget {
 }
 
 class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
-  String mainInfo = AppComponents.mercuryMainInfoOverview;
+  String mainInfo = AppAssets.mercuryMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.mercuryOverviewAsset;
+  String mainSvgAsset = AppAssets.mercuryOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.mercurySurfaceAsset;
+  final String secondarySvgAsset = AppAssets.mercurySurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.mercuryColor;
 
   final Color borderInfoColor = AppColors.mercuryColor;
 
-  final String mainTitle = AppComponents.mercuryTitle;
+  final String mainTitle = AppAssets.mercuryTitle;
 
   static const Size mainSizeSvgAsset = Size.square(111);
 
@@ -36,8 +37,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.mercuryOverviewAsset;
-      mainInfo = AppComponents.mercuryMainInfoOverview;
+      mainSvgAsset = AppAssets.mercuryOverviewAsset;
+      mainInfo = AppAssets.mercuryMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.mercuryStructureAsset;
-      mainInfo = AppComponents.mercuryMainInfoStructure;
+      mainSvgAsset = AppAssets.mercuryStructureAsset;
+      mainInfo = AppAssets.mercuryMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetMercuryScreenState extends State<PlanetMercuryScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.mercuryOverviewAsset;
-      mainInfo = AppComponents.mercuryMainInfoSurface;
+      mainSvgAsset = AppAssets.mercuryOverviewAsset;
+      mainInfo = AppAssets.mercuryMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;

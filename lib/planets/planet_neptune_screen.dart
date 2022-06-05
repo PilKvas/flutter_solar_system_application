@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetNeptuneScreen extends StatefulWidget {
 }
 
 class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
-  String mainInfo = AppComponents.neptuneMainInfoOverview;
+  String mainInfo = AppAssets.neptuneMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.neptuneOverviewAsset;
+  String mainSvgAsset = AppAssets.neptuneOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.neptuneSurfaceAsset;
+  final String secondarySvgAsset = AppAssets.neptuneSurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.neptuneColor;
 
   final Color borderInfoColor = AppColors.neptuneColor;
 
-  final String mainTitle = AppComponents.neptuneTitle;
+  final String mainTitle = AppAssets.neptuneTitle;
 
   static const Size mainSizeSvgAsset = Size.square(173);
 
@@ -36,8 +37,8 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.neptuneOverviewAsset;
-      mainInfo = AppComponents.neptuneMainInfoOverview;
+      mainSvgAsset = AppAssets.neptuneOverviewAsset;
+      mainInfo = AppAssets.neptuneMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.neptuneStructureAsset;
-      mainInfo = AppComponents.neptuneMainInfoStructure;
+      mainSvgAsset = AppAssets.neptuneStructureAsset;
+      mainInfo = AppAssets.neptuneMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetNeptuneScreenState extends State<PlanetNeptuneScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.neptuneOverviewAsset;
-      mainInfo = AppComponents.neptuneMainInfoSurface;
+      mainSvgAsset = AppAssets.neptuneOverviewAsset;
+      mainInfo = AppAssets.neptuneMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;

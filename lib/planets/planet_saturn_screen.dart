@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetSaturnScreen extends StatefulWidget {
 }
 
 class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
-  String mainInfo = AppComponents.saturnMainInfoOverview;
+  String mainInfo = AppAssets.saturnMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.saturnOverviewAsset;
+  String mainSvgAsset = AppAssets.saturnOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.saturnSurfaceAsset;
+  final String secondarySvgAsset = AppAssets.saturnSurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.saturnColor;
 
   final Color borderInfoColor = AppColors.saturnColor;
 
-  final String mainTitle = AppComponents.saturnTitle;
+  final String mainTitle = AppAssets.saturnTitle;
 
   static const Size mainSizeSvgAsset = Size.square(211);
 
@@ -36,8 +37,8 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.earthOverviewAsset;
-      mainInfo = AppComponents.earthMainInfoOverview;
+      mainSvgAsset = AppAssets.earthOverviewAsset;
+      mainInfo = AppAssets.earthMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.earthStructureAsset;
-      mainInfo = AppComponents.earthMainInfoStructure;
+      mainSvgAsset = AppAssets.earthStructureAsset;
+      mainInfo = AppAssets.earthMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetSaturnScreenState extends State<PlanetSaturnScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.earthOverviewAsset;
-      mainInfo = AppComponents.earthMainInfoSurface;
+      mainSvgAsset = AppAssets.earthOverviewAsset;
+      mainInfo = AppAssets.earthMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;

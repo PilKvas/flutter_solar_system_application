@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetUranusScreen extends StatefulWidget {
 }
 
 class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
-  String mainInfo = AppComponents.uranusMainInfoOverview;
+  String mainInfo = AppAssets.uranusMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.uranusOverviewAsset;
+  String mainSvgAsset = AppAssets.uranusOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.uranusSurfaceAsset;
+  final String secondarySvgAsset = AppAssets.uranusSurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.uranusColor;
 
   final Color borderInfoColor = AppColors.uranusColor;
 
-  final String mainTitle = AppComponents.uranusTitle;
+  final String mainTitle = AppAssets.uranusTitle;
 
   static const Size mainSizeSvgAsset = Size.square(176);
 
@@ -36,8 +37,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.uranusOverviewAsset;
-      mainInfo = AppComponents.uranusMainInfoOverview;
+      mainSvgAsset = AppAssets.uranusOverviewAsset;
+      mainInfo = AppAssets.uranusMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.uranusStructureAsset;
-      mainInfo = AppComponents.uranusMainInfoStructure;
+      mainSvgAsset = AppAssets.uranusStructureAsset;
+      mainInfo = AppAssets.uranusMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetUranusScreenState extends State<PlanetUranusScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.uranusOverviewAsset;
-      mainInfo = AppComponents.uranusMainInfoSurface;
+      mainSvgAsset = AppAssets.uranusOverviewAsset;
+      mainInfo = AppAssets.uranusMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;

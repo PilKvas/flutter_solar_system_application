@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetJupiterScreen extends StatefulWidget {
 }
 
 class _PlanetJupiterScreenState extends State<PlanetJupiterScreen> {
-  String mainInfo = AppComponents.jupiterMainInfoOverview;
+  String mainInfo = AppAssets.jupiterMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.jupiterOverviewAsset;
+  String mainSvgAsset = AppAssets.jupiterOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.jupiterSurfaceAsset;
+  final String secondarySvgAsset = AppAssets.jupiterSurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.jupiterColor;
 
   final Color borderInfoColor = AppColors.jupiterColor;
 
-  final String mainTitle = AppComponents.jupiterTitle;
+  final String mainTitle = AppAssets.jupiterTitle;
 
   static const Size mainSizeSvgAsset = Size.square(224);
 
@@ -36,8 +37,8 @@ class _PlanetJupiterScreenState extends State<PlanetJupiterScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.jupiterOverviewAsset;
-      mainInfo = AppComponents.jupiterMainInfoOverview;
+      mainSvgAsset = AppAssets.jupiterOverviewAsset;
+      mainInfo = AppAssets.jupiterMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetJupiterScreenState extends State<PlanetJupiterScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.jupiterStructureAsset;
-      mainInfo = AppComponents.jupiterMainInfoStructure;
+      mainSvgAsset = AppAssets.jupiterStructureAsset;
+      mainInfo = AppAssets.jupiterMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetJupiterScreenState extends State<PlanetJupiterScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.jupiterOverviewAsset;
-      mainInfo = AppComponents.jupiterMainInfoSurface;
+      mainSvgAsset = AppAssets.jupiterOverviewAsset;
+      mainInfo = AppAssets.jupiterMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;

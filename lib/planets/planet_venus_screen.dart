@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetVenusScreen extends StatefulWidget {
 }
 
 class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
-  String mainInfo = AppComponents.venusMainInfoOverview;
+  String mainInfo = AppAssets.venusMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.venusOverviewAsset;
+  String mainSvgAsset = AppAssets.venusOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.venusSurfaceAsset;
+  final String secondarySvgAsset = AppAssets.venusSurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.venusColor;
 
   final Color borderInfoColor = AppColors.venusColor;
 
-  final String mainTitle = AppComponents.venusTitle;
+  final String mainTitle = AppAssets.venusTitle;
 
   static const Size mainSizeSvgAsset = Size.square(256);
 
@@ -36,8 +37,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.venusOverviewAsset;
-      mainInfo = AppComponents.venusMainInfoOverview;
+      mainSvgAsset = AppAssets.venusOverviewAsset;
+      mainInfo = AppAssets.venusMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.venusStructureAsset;
-      mainInfo = AppComponents.venusMainInfoStructure;
+      mainSvgAsset = AppAssets.venusStructureAsset;
+      mainInfo = AppAssets.venusMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetVenusScreenState extends State<PlanetVenusScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.venusOverviewAsset;
-      mainInfo = AppComponents.venusMainInfoSurface;
+      mainSvgAsset = AppAssets.venusOverviewAsset;
+      mainInfo = AppAssets.venusMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;

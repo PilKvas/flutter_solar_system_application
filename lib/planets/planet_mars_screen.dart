@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configurations.dart';
+import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
@@ -14,17 +15,17 @@ class PlanetMarsScreen extends StatefulWidget {
 }
 
 class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
-  String mainInfo = AppComponents.marsMainInfoOverview;
+  String mainInfo = AppAssets.marsMainInfoOverview;
 
-  String mainSvgAsset = AppComponents.marsOverviewAsset;
+  String mainSvgAsset = AppAssets.marsOverviewAsset;
 
-  final String secondarySvgAsset = AppComponents.marsSurfaceAsset;
+  final String secondarySvgAsset = AppAssets.marsSurfaceAsset;
 
   final Color buttonBackgroundColor = AppColors.marsColor;
 
   final Color borderInfoColor = AppColors.marsColor;
 
-  final String mainTitle = AppComponents.marsTitle;
+  final String mainTitle = AppAssets.marsTitle;
 
   static const Size mainSizeSvgAsset = Size.square(129);
 
@@ -36,8 +37,8 @@ class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
 
   void overviewButton() {
     setState(() {
-      mainSvgAsset = AppComponents.marsOverviewAsset;
-      mainInfo = AppComponents.marsMainInfoOverview;
+      mainSvgAsset = AppAssets.marsOverviewAsset;
+      mainInfo = AppAssets.marsMainInfoOverview;
       isActiveOverview = true;
       isActiveStructure = false;
       isActiveSurface = false;
@@ -46,8 +47,8 @@ class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
 
   void structureButton() {
     setState(() {
-      mainSvgAsset = AppComponents.marsStructureAsset;
-      mainInfo = AppComponents.marsMainInfoStructure;
+      mainSvgAsset = AppAssets.marsStructureAsset;
+      mainInfo = AppAssets.marsMainInfoStructure;
       isActiveOverview = false;
       isActiveStructure = true;
       isActiveSurface = false;
@@ -56,8 +57,8 @@ class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppComponents.mercuryOverviewAsset;
-      mainInfo = AppComponents.mercuryMainInfoSurface;
+      mainSvgAsset = AppAssets.mercuryOverviewAsset;
+      mainInfo = AppAssets.mercuryMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;
