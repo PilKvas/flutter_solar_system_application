@@ -15,7 +15,7 @@ abstract class MainNavigationRouteNames {
   static const planetVenus = '/PlanetVenusScreen';
   static const planetEarth = '/PlanetEarthScreen';
   static const planetMars = '/PlanetMarsScreen';
-  static const planetJuputer = '/PlanetJupiterScreen';
+  static const planetJupiter = '/PlanetJupiterScreen';
   static const planetSaturn = '/PlanetSaturnScreen';
   static const planetUranus = '/PlanetUranusScreen';
   static const planetNeptune = '/PlanetNeptuneScreen';
@@ -24,13 +24,13 @@ abstract class MainNavigationRouteNames {
 class MainNavigation {
   final initialRoute = MainNavigationRouteNames.planetMercury;
   final routes = <String, Widget Function(BuildContext)>{
-    '/': (_) => const PlanetMercuryScreen(),
-    '/planet_venus_screen': (_) => const PlanetVenusScreen(),
-    '/planet_earth_screen': (_) => const PlanetEarthScreen(),
-    '/planet_mars_screen': (_) => const PlanetMarsScreen(),
-    '/planet_jupiter_screen': (_) => const PlanetJupiterScreen(),
-    '/planet_saturn_screen': (_) => const PlanetSaturnScreen(),
-    '/planet_uranus_screen': (_) => const PlanetUranusScreen(),
-    '/planet_neptune_screen': (_) => const PlanetNeptuneScreen(),
+    MainNavigationRouteNames.planetMercury: (_) => const PlanetMercuryScreen(),
+    MainNavigationRouteNames.planetVenus: (_) => const PlanetVenusScreen(),
+    MainNavigationRouteNames.planetEarth: (_) => const PlanetEarthScreen(),
+    MainNavigationRouteNames.planetMars: (_) => const PlanetMarsScreen(),
+    MainNavigationRouteNames.planetJupiter: (_) => const PlanetJupiterScreen(),
+    MainNavigationRouteNames.planetSaturn: (_) => const PlanetSaturnScreen(),
+    MainNavigationRouteNames.planetUranus: (_) => const PlanetUranusScreen(),
+    MainNavigationRouteNames.planetNeptune: (_) => const PlanetNeptuneScreen(),
   };
 }
