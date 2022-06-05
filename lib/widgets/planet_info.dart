@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_solar_system_application/configurations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-
 class PlanetInfo extends StatelessWidget {
   final Color borderInfoColor;
   final String leftSideText;
   final String rightSideText;
 
-  const PlanetInfo({Key? key, required this.leftSideText, required this.rightSideText, required this.borderInfoColor})
+  const PlanetInfo(
+      {Key? key,
+      required this.leftSideText,
+      required this.rightSideText,
+      required this.borderInfoColor})
       : super(key: key);
 
   @override
