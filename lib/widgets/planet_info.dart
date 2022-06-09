@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+
+
+/* Класс PlanetInfo отвечает за отображение строки с информацией о планетах, хранит свойства отвечающие за информацию */
+
 class PlanetInfo extends StatelessWidget {
   final Color borderInfoColor;
   final String leftSideText;
