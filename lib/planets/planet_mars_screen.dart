@@ -3,9 +3,16 @@ import 'package:flutter_solar_system_application/configuration/app_assets.dart';
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
-import 'package:flutter_solar_system_application/widgets/planet_info.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../widgets/planet_info_stack.dart';
+
+
+
+
+/* Является 'строительныи лесом' где расположены все собственноручно написанные виджеты , ответственность за функциональную часть кнопок, скролл, хранит в себе все переменные виджетов*/
+
 
 class PlanetMarsScreen extends StatefulWidget {
   const PlanetMarsScreen({Key? key}) : super(key: key);
@@ -57,8 +64,8 @@ class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
 
   void surfaceButton() {
     setState(() {
-      mainSvgAsset = AppAssets.mercuryOverviewAsset;
-      mainInfo = AppAssets.mercuryMainInfoSurface;
+      mainSvgAsset = AppAssets.marsOverviewAsset;
+      mainInfo = AppAssets.marsMainInfoSurface;
       isActiveOverview = false;
       isActiveStructure = false;
       isActiveSurface = true;
@@ -201,7 +208,9 @@ class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.white),
                           )),
-                      const SizedBox(height: 40),
+                      const SizedBox(
+                        height: 40,
+                      ),
                       Text(mainInfo,
                           textAlign: TextAlign.center,
                           style: GoogleFonts.leagueSpartan(
@@ -214,26 +223,7 @@ class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
                       const SizedBox(
                         height: 40,
                       ),
-                      PlanetInfo(
-                        leftSideText: 'ROTATION TIME',
-                        rightSideText: '58.6 DAYS',
-                        borderInfoColor: borderInfoColor,
-                      ),
-                      PlanetInfo(
-                        leftSideText: 'REVOLUTION TIME',
-                        rightSideText: '87.97 DAYS',
-                        borderInfoColor: borderInfoColor,
-                      ),
-                      PlanetInfo(
-                        leftSideText: 'RADIUS',
-                        rightSideText: '2,439.7 KM',
-                        borderInfoColor: borderInfoColor,
-                      ),
-                      PlanetInfo(
-                        leftSideText: 'AVERAGE TEMP.',
-                        rightSideText: '430°C',
-                        borderInfoColor: borderInfoColor,
-                      ),
+                      PlanetInfoStack(borderInfoColor: borderInfoColor),
                     ],
                   ),
                 ),
@@ -245,3 +235,4 @@ class _PlanetMarsScreenState extends State<PlanetMarsScreen> {
     );
   }
 }
+
