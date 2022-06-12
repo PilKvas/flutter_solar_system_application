@@ -4,8 +4,11 @@ import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/widgets/background.dart';
 import 'package:flutter_solar_system_application/widgets/drawer_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
+import 'package:flutter_solar_system_application/widgets/planet_info_stack.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+/* Является 'строительныи лесом' где расположены все собственноручно написанные виджеты , ответственность за функциональную часть кнопок, скролл, хранит в себе все переменные виджетов*/
 
 class PlanetEarthScreen extends StatefulWidget {
   const PlanetEarthScreen({Key? key}) : super(key: key);
@@ -214,25 +217,7 @@ class _PlanetEarthScreenState extends State<PlanetEarthScreen> {
                       const SizedBox(
                         height: 40,
                       ),
-                      PlanetInfo(
-                          leftSideText: 'ROTATION TIME',
-                          rightSideText: '58.6 DAYS',
-                          borderInfoColor: borderInfoColor),
-                      PlanetInfo(
-                        leftSideText: 'REVOLUTION TIME',
-                        rightSideText: '87.97 DAYS',
-                        borderInfoColor: borderInfoColor,
-                      ),
-                      PlanetInfo(
-                        leftSideText: 'RADIUS',
-                        rightSideText: '2,439.7 KM',
-                        borderInfoColor: borderInfoColor,
-                      ),
-                      PlanetInfo(
-                        leftSideText: 'AVERAGE TEMP.',
-                        rightSideText: '430°C',
-                        borderInfoColor: borderInfoColor,
-                      ),
+                      PlanetInfoStack(borderInfoColor: borderInfoColor),
                     ],
                   ),
                 ),

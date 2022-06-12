@@ -4,6 +4,8 @@ import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/main_navigation.dart';
 import 'package:flutter_solar_system_application/widgets/nav_row.dart';
 
+/* Ответственность за отображение виджета Drawer и его чайлдов*/
+
 class DrawerNavigation extends StatelessWidget {
   const DrawerNavigation({
     Key? key,
