@@ -3,10 +3,6 @@ import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-
-/* Ответственность за кнопку навигации, ее оформления и конкретизацию именного роута */
-
 class NavRow extends StatelessWidget {
   static const Size svgPlanetSize = Size.square(25);
   final String route;
