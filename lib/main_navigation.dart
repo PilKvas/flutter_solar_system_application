@@ -8,9 +8,6 @@ import 'package:flutter_solar_system_application/planets/planet_saturn_screen.da
 import 'package:flutter_solar_system_application/planets/planet_uranus_screen.dart.dart';
 import 'package:flutter_solar_system_application/planets/planet_venus_screen.dart';
 
-
-/* Хранение имменых роутов */
-
 abstract class MainNavigationRouteNames {
   MainNavigationRouteNames._();
 
@@ -23,8 +20,6 @@ abstract class MainNavigationRouteNames {
   static const planetUranus = '/PlanetUranusScreen';
   static const planetNeptune = '/PlanetNeptuneScreen';
 }
-
-/* Блок декларации роутинга */ 
 
 class MainNavigation {
   final initialRoute = MainNavigationRouteNames.planetMercury;

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-/* Ответственность - хранение цветов */
-
 class AppColors {
   AppColors._();
 
