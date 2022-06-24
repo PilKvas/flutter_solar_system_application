@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 /* Ответственность за статический фон приложения, является корневым для тела приложения*/
@@ -11,8 +10,7 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-        color: AppColors.background,
+    return SizedBox(
         width: double.infinity,
         height: size.height,
         child: Stack(

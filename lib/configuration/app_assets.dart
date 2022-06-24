@@ -1,5 +1,7 @@
 /* Ответственность за хранение ассетов */
 
+import 'package:flutter/material.dart';
+
 class AppAssets {
   AppAssets._();
 
@@ -109,4 +111,5 @@ class AppAssets {
       "Neptune's atmosphere is 80% hydrogen and 19% helium. A trace amount of methane is also present. Prominent absorption bands of methane exist at wavelengths above 600 nm, in the red and infrared portion of the spectrum.";
 
   /* ------------------------------------ */
+
 }

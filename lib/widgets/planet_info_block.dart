@@ -3,8 +3,8 @@ import 'package:flutter_solar_system_application/widgets/planet_info.dart';
 
 /* Gервая попытка декомпозиции. Выделил блок с информацией о планетах */
 
-class PlanetInfoStack extends StatelessWidget {
-  const PlanetInfoStack({
+class PlanetInfoBlock extends StatelessWidget {
+  const PlanetInfoBlock({
     Key? key,
     required this.borderInfoColor,
   }) : super(key: key);

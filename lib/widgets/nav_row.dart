@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 /* Ответственность за кнопку навигации, ее оформления и конкретизацию именного роута */
 
@@ -47,14 +46,7 @@ class NavRow extends StatelessWidget {
                 ),
                 Text(
                   planetName.toUpperCase(),
-                  style: GoogleFonts.leagueSpartan(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                      letterSpacing: 1.36,
-                      color: AppColors.white,
-                    ),
-                  ),
+                  style: Theme.of(context).textTheme.headline4,
                 ),
                 const Icon(Icons.arrow_right_rounded, color: AppColors.white)
               ],

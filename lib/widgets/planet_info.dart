@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_solar_system_application/configuration/app_colors.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 /* Класс PlanetInfo отвечает за отображение строки с информацией о планетах, хранит свойства отвечающие за информацию */
 
@@ -28,20 +26,11 @@ class PlanetInfo extends StatelessWidget {
         children: [
           Text(
             leftSideText,
-            style: GoogleFonts.leagueSpartan(
-                textStyle: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 15,
-                    color: AppColors.lightGrey)),
+            style: Theme.of(context).textTheme.headline1,
           ),
           Text(
             rightSideText,
-            style: GoogleFonts.antonio(
-                textStyle: const TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 25,
-                    color: AppColors.white,
-                    letterSpacing: -0.75)),
+            style: Theme.of(context).textTheme.headline2,
           ),
         ],
       ),
