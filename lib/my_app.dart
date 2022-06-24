@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Solar System',
       initialRoute: mainNavigation.initialRoute,
       routes: mainNavigation.routes,
-      theme: PlanetTheme(),
+      theme: planetTheme(),
     );
   }
 }

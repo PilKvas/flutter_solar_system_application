@@ -29,7 +29,7 @@ class AppFontConfiguration {
   final FontWeight regular = FontWeight.w300;
 }
 
-ThemeData PlanetTheme() {
+ThemeData planetTheme() {
   return ThemeData(
     scaffoldBackgroundColor: AppColors.background,
     textTheme: const TextTheme(

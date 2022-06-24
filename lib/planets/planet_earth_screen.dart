@@ -5,7 +5,7 @@ import 'package:flutter_solar_system_application/widgets/common_screen.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info_block.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-/* Является 'строительныи лесом' где расположены все собственноручно написанные виджеты , ответственность за функциональную часть кнопок, скролл, хранит в себе все переменные виджетов*/
+/* Является 'строительныи лесом' где расположены все собственноручно написанные виджеты , ответственность за функциональную часть кнопок, скролл, хранит в себе все переменные виджетов, обработка нажатий по кнопкам, отображение данных плаенты Земля, Логика отображения, Стилизация*/
 
 class PlanetEarthScreen extends StatefulWidget {
   const PlanetEarthScreen({Key? key}) : super(key: key);
