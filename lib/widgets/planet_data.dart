@@ -1,10 +1,14 @@
+
+
 class PlanetInfoData {
   final String info;
   final String asset;
+  final Uri url;
 
   PlanetInfoData({
     required this.info,
     required this.asset,
+    required this.url,
   });
 }
 
@@ -14,6 +18,7 @@ class PlanetData {
   final PlanetInfoData overview;
   final PlanetInfoData structure;
   final PlanetInfoData surface;
+
 
   final String rotationTime;
   final String revolutionTime;
@@ -31,3 +36,4 @@ class PlanetData {
     required this.averageTemperature,
   });
 }
+
