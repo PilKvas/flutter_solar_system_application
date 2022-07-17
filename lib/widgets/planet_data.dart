@@ -1,10 +1,12 @@
 class PlanetInfoData {
   final String info;
   final String asset;
+  // final Uri url;
 
   PlanetInfoData({
     required this.info,
     required this.asset,
+    // required this.url,
   });
 }
 

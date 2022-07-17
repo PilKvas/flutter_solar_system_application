@@ -1,7 +1,5 @@
 /* Ответственность за хранение ассетов */
 
-import 'package:flutter/material.dart';
-
 class AppAssets {
   AppAssets._();
 
