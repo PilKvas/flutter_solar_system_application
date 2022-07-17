@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+// import 'package:flutter_solar_system_application/configuration/app_assets.dart';
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/planets/planet_screen.dart';
 import 'package:flutter_solar_system_application/widgets/data_json.dart';
