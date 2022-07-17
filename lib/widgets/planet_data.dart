@@ -1,5 +1,3 @@
-
-
 class PlanetInfoData {
   final String info;
   final String asset;
@@ -19,7 +17,6 @@ class PlanetData {
   final PlanetInfoData structure;
   final PlanetInfoData surface;
 
-
   final String rotationTime;
   final String revolutionTime;
   final String radius;
@@ -36,4 +33,3 @@ class PlanetData {
     required this.averageTemperature,
   });
 }
-

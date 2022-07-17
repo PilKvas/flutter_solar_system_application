@@ -4,8 +4,6 @@ import 'package:flutter_solar_system_application/widgets/app_theme.dart';
 
 void main() => runApp(const MyApp());
 
-
-
 class MyApp extends StatelessWidget {
   static final mainNavigation = MainNavigation();
 

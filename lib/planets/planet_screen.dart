@@ -4,7 +4,7 @@ import 'package:flutter_solar_system_application/widgets/planet_data.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
 import 'package:flutter_solar_system_application/widgets/planet_shell.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 enum _TabState {
   overview,
@@ -56,6 +56,7 @@ class _PlanetScreenState extends State<PlanetScreen> {
         return widget.data.overview.asset;
     }
   }
+
   // Uri get _mainUrl{
   //   switch (_currentTab) {
   //     case _TabState.overview:
@@ -175,7 +176,6 @@ class _PlanetScreenState extends State<PlanetScreen> {
                             height: mainSizeSvgAsset.height,
                           ),
                         )
-
                       ],
                     ),
                     const SizedBox(
