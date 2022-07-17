@@ -17,7 +17,7 @@ class DrawerNavigation extends StatelessWidget {
         backgroundColor: AppColors.background,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const[
             NavRow(
               planetSvgAsset: AppAssets.mercuryOverviewAsset,
               route: MainNavigationRouteNames.planetMercury,
