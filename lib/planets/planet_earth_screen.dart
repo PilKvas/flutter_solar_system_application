@@ -8,31 +8,32 @@ import 'package:flutter_solar_system_application/widgets/planet_data.dart';
 /* Является 'строительныи лесом' где расположены все собственноручно написанные виджеты , ответственность за функциональную часть кнопок, скролл, хранит в себе все переменные виджетов, обработка нажатий по кнопкам, отображение данных плаенты Земля, Логика отображения, Стилизация*/
 
 class PlanetEarthScreen extends StatelessWidget {
+  final queue = 2;
   const PlanetEarthScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return PlanetScreen(
         data: PlanetData(
-          title: planetAsset[2]['name'],
+          title: planetAsset[queue]['name'],
           overview: PlanetInfoData(
-            info: planetAsset[2]['overview']['content'],
-            asset: planetAsset[2]['images']['planet'],
+            info: planetAsset[queue]['overview']['content'],
+            asset: planetAsset[queue]['images']['planet'],
           ),
           // url: Uri.parse(planetAsset[2]['overview']['source'])),
           structure: PlanetInfoData(
-            info: planetAsset[2]['structure']['content'],
-            asset: planetAsset[2]['images']['internal'],
+            info: planetAsset[queue]['structure']['content'],
+            asset: planetAsset[queue]['images']['internal'],
           ),
           // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Internal_structure')),
           surface: PlanetInfoData(
-            info: planetAsset[2]['geology']['content'],
-            asset: planetAsset[2]['images']['geology'],
+            info: planetAsset[queue]['geology']['content'],
+            asset: planetAsset[queue]['images']['geology'],
             // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Surface')),
           ),
-          rotationTime: planetAsset[2]['rotation'],
-          revolutionTime: planetAsset[2]['revolution'],
-          radius: planetAsset[2]['radius'],
-          averageTemperature: planetAsset[2]['temperature'],
+          rotationTime: planetAsset[queue]['rotation'],
+          revolutionTime: planetAsset[queue]['revolution'],
+          radius: planetAsset[queue]['radius'],
+          averageTemperature: planetAsset[queue]['temperature'],
         ),
         buttonBackgroundColor: AppColors.earthColor,
         borderInfoColor: AppColors.earthColor);
