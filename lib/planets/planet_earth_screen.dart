@@ -1,38 +1,39 @@
 import "package:flutter/material.dart";
-import 'package:flutter_solar_system_application/configuration/app_assets.dart';
+// import 'package:flutter_solar_system_application/configuration/app_assets.dart';
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 import 'package:flutter_solar_system_application/planets/planet_screen.dart';
-// import 'package:flutter_solar_system_application/widgets/data_json.dart';
+import 'package:flutter_solar_system_application/widgets/data_json.dart';
 import 'package:flutter_solar_system_application/widgets/planet_data.dart';
 
 /* Является 'строительныи лесом' где расположены все собственноручно написанные виджеты , ответственность за функциональную часть кнопок, скролл, хранит в себе все переменные виджетов, обработка нажатий по кнопкам, отображение данных плаенты Земля, Логика отображения, Стилизация*/
 
 class PlanetEarthScreen extends StatelessWidget {
+  final queue = 2;
   const PlanetEarthScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return PlanetScreen(
         data: PlanetData(
-          title: AppAssets.earthTitle,
+          title: planetAsset[queue]['name'],
           overview: PlanetInfoData(
-            info: AppAssets.earthMainInfoOverview,
-            asset: AppAssets.earthOverviewAsset,
+            info: planetAsset[queue]['overview']['content'],
+            asset: planetAsset[queue]['images']['planet'],
           ),
-          // url: Uri.parse('https://en.wikipedia.org/wiki/Earth')),
+          // url: Uri.parse(planetAsset[2]['overview']['source'])),
           structure: PlanetInfoData(
-            info: AppAssets.earthMainInfoStructure,
-            asset: AppAssets.earthStructureAsset,
+            info: planetAsset[queue]['structure']['content'],
+            asset: planetAsset[queue]['images']['internal'],
           ),
           // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Internal_structure')),
           surface: PlanetInfoData(
-            info: AppAssets.earthMainInfoSurface,
-            asset: 'assets/geology-earth.png',
+            info: planetAsset[queue]['geology']['content'],
+            asset: planetAsset[queue]['images']['geology'],
             // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Surface')),
           ),
-          rotationTime: '58.6',
-          revolutionTime: '87.97 DAYS',
-          radius: '2,439.7 KM',
-          averageTemperature: '430°C',
+          rotationTime: planetAsset[queue]['rotation'],
+          revolutionTime: planetAsset[queue]['revolution'],
+          radius: planetAsset[queue]['radius'],
+          averageTemperature: planetAsset[queue]['temperature'],
         ),
         buttonBackgroundColor: AppColors.earthColor,
         borderInfoColor: AppColors.earthColor);
