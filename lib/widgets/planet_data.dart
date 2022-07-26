@@ -21,8 +21,12 @@ class PlanetData {
   final String revolutionTime;
   final String radius;
   final String averageTemperature;
+  final double assetSize;
+  // final double width;
+  // final double height;
 
   PlanetData({
+    required this.assetSize,
     required this.title,
     required this.overview,
     required this.structure,
@@ -32,4 +36,10 @@ class PlanetData {
     required this.radius,
     required this.averageTemperature,
   });
+}
+
+enum TabState {
+  overview,
+  structure,
+  surface,
 }
