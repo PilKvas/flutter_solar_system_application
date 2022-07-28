@@ -14,8 +14,9 @@ class PlanetVenusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Planet>>(
-        future: PlanetApi.getPlanetLocally(context),
-        builder: (context, snapshot) {
+      future: PlanetApi.getPlanetLocally(context),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
           final planetAsset = snapshot.data![queue];
           return PlanetScreen(
             data: PlanetData(
@@ -23,27 +24,30 @@ class PlanetVenusScreen extends StatelessWidget {
               overview: PlanetInfoData(
                 info: planetAsset.overview.content,
                 asset: planetAsset.images.planet,
+                url: Uri.parse(planetAsset.overview.source),
               ),
-              // url: Uri.parse(planetAsset[2]['overview']['source'])),
               structure: PlanetInfoData(
                 info: planetAsset.structure.content,
                 asset: planetAsset.images.internal,
+                url: Uri.parse(planetAsset.structure.source),
               ),
-              // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Internal_structure')),
               surface: PlanetInfoData(
                 info: planetAsset.geology.content,
                 asset: planetAsset.images.geology,
-                // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Surface')),
+                url: Uri.parse(planetAsset.geology.source),
               ),
               rotationTime: planetAsset.rotation,
               revolutionTime: planetAsset.revolution,
               radius: planetAsset.radius,
               averageTemperature: planetAsset.temperature,
-              assetSize: 256,
+              assetSize: 154,
             ),
             buttonBackgroundColor: AppColors.venusColor,
             borderInfoColor: AppColors.venusColor,
           );
-        });
+        }
+        return const CircularProgressIndicator();
+      },
+    );
   }
 }
