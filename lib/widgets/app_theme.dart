@@ -1,34 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 
-class AppFontConfiguration {
-  /* Fonts configurations */
-
-  static const antonio = "Antonio";
-
-  static const double mainTitleSize = 40.0;
-  static const FontWeight mainTitleWeight = FontWeight.w300;
-
-  static const double mainInfoFontSize = 17.0;
-  static const FontWeight mainInfoFontWeight = FontWeight.w300;
-
-  static const leagueFont = "LeagueSpartan";
-
-  final FontWeight buttonBarBold = FontWeight.w700;
-
-  final double buttonBarFontSize = 11.0;
-  final double buttonBarSpacing = 1.96;
-
-  static const FontWeight leftTextFontWeight = FontWeight.w700;
-  static const double leftTextFontSize = 15;
-
-  static const FontWeight rightTextFontWeight = FontWeight.w400;
-  static const double rightTextFontSize = 25;
-  static const double rightTextSpacing = -0.75;
-
-  final FontWeight regular = FontWeight.w300;
-}
-
 ThemeData planetTheme() {
   return ThemeData(
     scaffoldBackgroundColor: AppColors.background,
@@ -36,7 +8,7 @@ ThemeData planetTheme() {
       headline6: TextStyle(
         color: AppColors.white,
         fontWeight: FontWeight.w400,
-        fontFamily: AppFontConfiguration.antonio,
+        fontFamily: 'Antonio',
         fontSize: 28,
         letterSpacing: -1.05,
       ),
@@ -57,7 +29,7 @@ ThemeData planetTheme() {
       headline3: TextStyle(
         fontSize: 40,
         fontWeight: FontWeight.w400,
-        fontFamily: AppFontConfiguration.antonio,
+        fontFamily: 'Antonio',
         color: AppColors.white,
       ),
       bodyText1: TextStyle(
@@ -75,7 +47,7 @@ ThemeData planetTheme() {
       ),
       headline2: TextStyle(
         fontWeight: FontWeight.w400,
-        fontFamily: AppFontConfiguration.antonio,
+        fontFamily: 'Antonio',
         fontSize: 25,
         color: AppColors.white,
         letterSpacing: -0.75,

@@ -1,16 +1,11 @@
 import "package:flutter/material.dart";
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
+import 'package:flutter_solar_system_application/widgets/source_wikipedia.dart';
+import 'package:flutter_solar_system_application/widgets/text_button.dart';
 import 'package:flutter_solar_system_application/widgets/planet_data.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
 import 'package:flutter_solar_system_application/widgets/planet_shell.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:url_launcher/url_launcher.dart';
-
-enum _TabState {
-  overview,
-  structure,
-  surface,
-}
 
 class PlanetScreen extends StatefulWidget {
   const PlanetScreen(
@@ -31,57 +26,56 @@ class PlanetScreen extends StatefulWidget {
 }
 
 class _PlanetScreenState extends State<PlanetScreen> {
-  static const Size mainSizeSvgAsset = Size.square(173);
-
-  _TabState _currentTab = _TabState.overview;
+  TabState currentTab = TabState.overview;
 
   String get _mainInfo {
-    switch (_currentTab) {
-      case _TabState.overview:
+    switch (currentTab) {
+      case TabState.overview:
         return widget.data.overview.info;
-      case _TabState.structure:
+      case TabState.structure:
         return widget.data.structure.info;
-      case _TabState.surface:
+      case TabState.surface:
         return widget.data.surface.info;
     }
   }
 
   String get _mainSvgAsset {
-    switch (_currentTab) {
-      case _TabState.overview:
+    switch (currentTab) {
+      case TabState.overview:
         return widget.data.overview.asset;
-      case _TabState.structure:
+      case TabState.structure:
         return widget.data.structure.asset;
-      case _TabState.surface:
+      case TabState.surface:
         return widget.data.overview.asset;
     }
   }
 
-  // Uri get _mainUrl{
-  //   switch (_currentTab) {
-  //     case _TabState.overview:
-  //       return widget.data.overview.url;
-  //     case _TabState.structure:
-  //       return widget.data.structure.url;
-  //     case _TabState.surface:
-  //       return widget.data.surface.url;
-  //   }
-  // }
+  Uri get _mainUrl {
+    switch (currentTab) {
+      case TabState.overview:
+        return widget.data.overview.url;
+      case TabState.structure:
+        return widget.data.structure.url;
+      case TabState.surface:
+        return widget.data.surface.url;
+    }
+  }
+
   void onOverviewPressed() {
     setState(() {
-      _currentTab = _TabState.overview;
+      currentTab = TabState.overview;
     });
   }
 
   void onStructurePressed() {
     setState(() {
-      _currentTab = _TabState.structure;
+      currentTab = TabState.structure;
     });
   }
 
   void onSurfacePressed() {
     setState(() {
-      _currentTab = _TabState.surface;
+      currentTab = TabState.surface;
     });
   }
 
@@ -103,53 +97,47 @@ class _PlanetScreenState extends State<PlanetScreen> {
                 child: ButtonBar(
                   alignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    TextButton(
+                    TextButtonWdiget(
+                      buttontTitle: 'OVERVIEW',
                       onPressed: onOverviewPressed,
-                      style: _currentTab == _TabState.overview
+                      buttonStyle: currentTab == TabState.overview
                           ? Theme.of(context).textButtonTheme.style?.copyWith(
                               backgroundColor: MaterialStateProperty.all(
                                   widget.buttonBackgroundColor))
                           : Theme.of(context).textButtonTheme.style,
-                      child: Text(
-                        'OVERVIEW',
-                        style: _currentTab == _TabState.overview
-                            ? Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: AppColors.white,
-                                )
-                            : Theme.of(context).textTheme.headline5,
-                      ),
+                      textStyle: currentTab == TabState.overview
+                          ? Theme.of(context).textTheme.headline5?.copyWith(
+                                color: AppColors.white,
+                              )
+                          : Theme.of(context).textTheme.headline5,
                     ),
-                    TextButton(
-                      style: _currentTab == _TabState.structure
-                          ? Theme.of(context).textButtonTheme.style?.copyWith(
-                              backgroundColor: MaterialStateProperty.all(
-                                  widget.buttonBackgroundColor))
-                          : Theme.of(context).textButtonTheme.style,
+                    TextButtonWdiget(
+                      buttontTitle: 'STRUCTURE',
                       onPressed: onStructurePressed,
-                      child: Text(
-                        'STRUCTURE',
-                        style: _currentTab == _TabState.structure
-                            ? Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: AppColors.white,
-                                )
-                            : Theme.of(context).textTheme.headline5,
-                      ),
-                    ),
-                    TextButton(
-                      style: _currentTab == _TabState.surface
+                      buttonStyle: currentTab == TabState.structure
                           ? Theme.of(context).textButtonTheme.style?.copyWith(
                               backgroundColor: MaterialStateProperty.all(
                                   widget.buttonBackgroundColor))
                           : Theme.of(context).textButtonTheme.style,
+                      textStyle: currentTab == TabState.structure
+                          ? Theme.of(context).textTheme.headline5?.copyWith(
+                                color: AppColors.white,
+                              )
+                          : Theme.of(context).textTheme.headline5,
+                    ),
+                    TextButtonWdiget(
+                      buttontTitle: 'SURFACE',
                       onPressed: onSurfacePressed,
-                      child: Text(
-                        'SURFACE',
-                        style: _currentTab == _TabState.surface
-                            ? Theme.of(context).textTheme.headline5?.copyWith(
-                                  color: AppColors.white,
-                                )
-                            : Theme.of(context).textTheme.headline5,
-                      ),
+                      buttonStyle: currentTab == TabState.surface
+                          ? Theme.of(context).textButtonTheme.style?.copyWith(
+                              backgroundColor: MaterialStateProperty.all(
+                                  widget.buttonBackgroundColor))
+                          : Theme.of(context).textButtonTheme.style,
+                      textStyle: currentTab == TabState.surface
+                          ? Theme.of(context).textTheme.headline5?.copyWith(
+                                color: AppColors.white,
+                              )
+                          : Theme.of(context).textTheme.headline5,
                     ),
                   ],
                 ),
@@ -165,15 +153,15 @@ class _PlanetScreenState extends State<PlanetScreen> {
                       children: [
                         SvgPicture.asset(
                           _mainSvgAsset,
-                          width: mainSizeSvgAsset.width,
-                          height: mainSizeSvgAsset.height,
+                          width: widget.data.assetSize,
+                          height: widget.data.assetSize,
                         ),
                         Opacity(
-                          opacity: _currentTab == _TabState.surface ? 1 : 0,
+                          opacity: currentTab == TabState.surface ? 1 : 0,
                           child: Image.asset(
                             widget.data.surface.asset,
-                            width: mainSizeSvgAsset.width,
-                            height: mainSizeSvgAsset.height,
+                            width: widget.data.assetSize,
+                            height: widget.data.assetSize,
                           ),
                         )
                       ],
@@ -192,14 +180,9 @@ class _PlanetScreenState extends State<PlanetScreen> {
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
-                    // GestureDetector(
-                    //   // onTap: () {
-                    //   //   launchUrl(_mainUrl);
-                    //   // },
-                    //   child: const Text('Source: Wikipedia', style: TextStyle(color: AppColors.white, fontSize: 20))
-                    // ),
+                    WikipediaWidget(mainUrl: _mainUrl),
                     const SizedBox(
                       height: 40,
                     ),
@@ -236,7 +219,4 @@ class _PlanetScreenState extends State<PlanetScreen> {
       ),
     );
   }
-//   void _launchUrl() async {
-//   if (!await launchUrl(widget.data.overview.url)) throw 'Could not launch' ;
-// }
 }
