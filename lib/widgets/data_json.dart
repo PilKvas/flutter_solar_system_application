@@ -257,7 +257,6 @@ class Planet {
         temperature: json["temperature"],
         images: Images.fromJson(json["images"]),
       );
-
 }
 
 class Geology {
@@ -273,7 +272,6 @@ class Geology {
         content: json["content"],
         source: json["source"],
       );
-
 }
 
 class Images {
@@ -292,16 +290,14 @@ class Images {
         internal: json["internal"],
         geology: json["geology"],
       );
-
 }
 
 // var planet = Planet.fromJson()
 
 class PlanetApi {
   static Future<List<Planet>> getPlanetLocally(BuildContext context) async {
-    final jsonString =
+    final String jsonString =
         await DefaultAssetBundle.of(context).loadString('assets/data.json');
-    print(planetFromJson(jsonString));
     return planetFromJson(jsonString);
   }
 }

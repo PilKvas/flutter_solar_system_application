@@ -15,34 +15,37 @@ class PlanetJupiterScreen extends StatelessWidget {
     return FutureBuilder<List<Planet>>(
       future: PlanetApi.getPlanetLocally(context),
       builder: (context, snapshot) {
-        final planetAsset = snapshot.data![queue];
-        return PlanetScreen(
-          data: PlanetData(
-            title: planetAsset.name,
-            overview: PlanetInfoData(
-              info: planetAsset.overview.content,
-              asset: planetAsset.images.planet,
+        if (snapshot.hasData) {
+          final planetAsset = snapshot.data![queue];
+          return PlanetScreen(
+            data: PlanetData(
+              title: planetAsset.name,
+              overview: PlanetInfoData(
+                info: planetAsset.overview.content,
+                asset: planetAsset.images.planet,
+                url: Uri.parse(planetAsset.overview.source),
+              ),
+              structure: PlanetInfoData(
+                info: planetAsset.structure.content,
+                asset: planetAsset.images.internal,
+                url: Uri.parse(planetAsset.structure.source),
+              ),
+              surface: PlanetInfoData(
+                info: planetAsset.geology.content,
+                asset: planetAsset.images.geology,
+                url: Uri.parse(planetAsset.geology.source),
+              ),
+              rotationTime: planetAsset.rotation,
+              revolutionTime: planetAsset.revolution,
+              radius: planetAsset.radius,
+              averageTemperature: planetAsset.temperature,
+              assetSize: 224,
             ),
-            // url: Uri.parse(planetAsset[2]['overview']['source'])),
-            structure: PlanetInfoData(
-              info: planetAsset.structure.content,
-              asset: planetAsset.images.internal,
-            ),
-            // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Internal_structure')),
-            surface: PlanetInfoData(
-              info: planetAsset.geology.content,
-              asset: planetAsset.images.geology,
-              // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Surface')),
-            ),
-            rotationTime: planetAsset.rotation,
-            revolutionTime: planetAsset.revolution,
-            radius: planetAsset.radius,
-            averageTemperature: planetAsset.temperature,
-            assetSize: 224,
-          ),
-          buttonBackgroundColor: AppColors.jupiterColor,
-          borderInfoColor: AppColors.jupiterColor,
-        );
+            buttonBackgroundColor: AppColors.jupiterColor,
+            borderInfoColor: AppColors.jupiterColor,
+          );
+        }
+        return const CircularProgressIndicator();
       },
     );
   }

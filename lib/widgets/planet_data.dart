@@ -1,12 +1,12 @@
 class PlanetInfoData {
   final String info;
   final String asset;
-  // final Uri url;
+  final Uri url;
 
   PlanetInfoData({
     required this.info,
     required this.asset,
-    // required this.url,
+    required this.url,
   });
 }
 
@@ -22,8 +22,6 @@ class PlanetData {
   final String radius;
   final String averageTemperature;
   final double assetSize;
-  // final double width;
-  // final double height;
 
   PlanetData({
     required this.assetSize,

@@ -13,8 +13,9 @@ class PlanetEarthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Planet>>(
-        future: PlanetApi.getPlanetLocally(context),
-        builder: (context, snapshot) {
+      future: PlanetApi.getPlanetLocally(context),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
           final planetAsset = snapshot.data![queue];
           return PlanetScreen(
             data: PlanetData(
@@ -22,17 +23,18 @@ class PlanetEarthScreen extends StatelessWidget {
               overview: PlanetInfoData(
                 info: planetAsset.overview.content,
                 asset: planetAsset.images.planet,
+                url:
+                    Uri.parse('https://en.wikipedia.org/wiki/Mercury_(planet)'),
               ),
-              // url: Uri.parse(planetAsset[2]['overview']['source'])),
               structure: PlanetInfoData(
                 info: planetAsset.structure.content,
                 asset: planetAsset.images.internal,
+                url: Uri.parse(planetAsset.structure.source),
               ),
-              // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Internal_structure')),
               surface: PlanetInfoData(
                 info: planetAsset.geology.content,
                 asset: planetAsset.images.geology,
-                // url: Uri.parse('https://en.wikipedia.org/wiki/Earth#Surface')),
+                url: Uri.parse(planetAsset.geology.source),
               ),
               rotationTime: planetAsset.rotation,
               revolutionTime: planetAsset.revolution,
@@ -43,6 +45,9 @@ class PlanetEarthScreen extends StatelessWidget {
             buttonBackgroundColor: AppColors.earthColor,
             borderInfoColor: AppColors.earthColor,
           );
-        });
+        }
+        return const CircularProgressIndicator();
+      },
+    );
   }
 }

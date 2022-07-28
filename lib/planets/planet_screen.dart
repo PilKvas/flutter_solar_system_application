@@ -1,11 +1,11 @@
 import "package:flutter/material.dart";
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
+import 'package:flutter_solar_system_application/widgets/source_wikipedia.dart';
 import 'package:flutter_solar_system_application/widgets/text_button.dart';
 import 'package:flutter_solar_system_application/widgets/planet_data.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
 import 'package:flutter_solar_system_application/widgets/planet_shell.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:url_launcher/url_launcher.dart';
 
 class PlanetScreen extends StatefulWidget {
   const PlanetScreen(
@@ -50,16 +50,17 @@ class _PlanetScreenState extends State<PlanetScreen> {
     }
   }
 
-  // Uri get _mainUrl{
-  //   switch (currentTab) {
-  //     case _TabState.overview:
-  //       return widget.data.overview.url;
-  //     case _TabState.structure:
-  //       return widget.data.structure.url;
-  //     case _TabState.surface:
-  //       return widget.data.surface.url;
-  //   }
-  // }
+  Uri get _mainUrl {
+    switch (currentTab) {
+      case TabState.overview:
+        return widget.data.overview.url;
+      case TabState.structure:
+        return widget.data.structure.url;
+      case TabState.surface:
+        return widget.data.surface.url;
+    }
+  }
+
   void onOverviewPressed() {
     setState(() {
       currentTab = TabState.overview;
@@ -179,14 +180,9 @@ class _PlanetScreenState extends State<PlanetScreen> {
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
-                    // GestureDetector(
-                    //   // onTap: () {
-                    //   //   launchUrl(_mainUrl);
-                    //   // },
-                    //   child: const Text('Source: Wikipedia', style: TextStyle(color: AppColors.white, fontSize: 20))
-                    // ),
+                    WikipediaWidget(mainUrl: _mainUrl),
                     const SizedBox(
                       height: 40,
                     ),
@@ -223,7 +219,4 @@ class _PlanetScreenState extends State<PlanetScreen> {
       ),
     );
   }
-//   void _launchUrl() async {
-//   if (!await launchUrl(widget.data.overview.url)) throw 'Could not launch' ;
-// }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TextButtonWdiget extends StatelessWidget {
-  
   final String buttontTitle;
   final void Function()? onPressed;
   final dynamic buttonBackgroundColor;
