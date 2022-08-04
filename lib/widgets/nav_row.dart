@@ -31,9 +31,15 @@ class NavRow extends StatelessWidget {
           ))),
           child: TextButton(
             style: ButtonStyle(
-                padding: MaterialStateProperty.all(const EdgeInsets.all(25))),
+              padding: MaterialStateProperty.all(
+                const EdgeInsets.all(25),
+              ),
+            ),
             onPressed: () {
-              Navigator.pushNamed(context, route);
+              Navigator.pushNamed(
+                context,
+                route,
+              );
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,7 +54,10 @@ class NavRow extends StatelessWidget {
                   planetName.toUpperCase(),
                   style: Theme.of(context).textTheme.headline4,
                 ),
-                const Icon(Icons.arrow_right_rounded, color: AppColors.white)
+                const Icon(
+                  Icons.arrow_right_rounded,
+                  color: AppColors.white,
+                )
               ],
             ),
           ),

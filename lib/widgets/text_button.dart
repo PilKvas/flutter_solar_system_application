@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TextButtonWdiget extends StatelessWidget {
+class TextButtonWidget extends StatelessWidget {
   final String buttontTitle;
   final void Function()? onPressed;
   final dynamic buttonBackgroundColor;
   final ButtonStyle? buttonStyle;
   final TextStyle? textStyle;
 
-  const TextButtonWdiget(
+  const TextButtonWidget(
       {Key? key,
       required this.buttontTitle,
       required this.onPressed,

@@ -23,8 +23,7 @@ class PlanetEarthScreen extends StatelessWidget {
               overview: PlanetInfoData(
                 info: planetAsset.overview.content,
                 asset: planetAsset.images.planet,
-                url:
-                    Uri.parse('https://en.wikipedia.org/wiki/Mercury_(planet)'),
+                url: Uri.parse(planetAsset.overview.source),
               ),
               structure: PlanetInfoData(
                 info: planetAsset.structure.content,

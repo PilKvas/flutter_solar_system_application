@@ -1,11 +1,15 @@
 import "package:flutter/material.dart";
 import 'package:flutter_solar_system_application/configuration/app_colors.dart';
+import 'package:flutter_solar_system_application/widgets/button_bar.dart';
+import 'package:flutter_solar_system_application/widgets/planet_main_info.dart';
+import 'package:flutter_solar_system_application/widgets/planet_title.dart';
+import 'package:flutter_solar_system_application/widgets/state_provider.dart';
 import 'package:flutter_solar_system_application/widgets/source_wikipedia.dart';
-import 'package:flutter_solar_system_application/widgets/text_button.dart';
 import 'package:flutter_solar_system_application/widgets/planet_data.dart';
 import 'package:flutter_solar_system_application/widgets/planet_info.dart';
 import 'package:flutter_solar_system_application/widgets/planet_shell.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class PlanetScreen extends StatefulWidget {
   const PlanetScreen(
@@ -28,7 +32,7 @@ class PlanetScreen extends StatefulWidget {
 class _PlanetScreenState extends State<PlanetScreen> {
   TabState currentTab = TabState.overview;
 
-  String get _mainInfo {
+  String get mainInfo {
     switch (currentTab) {
       case TabState.overview:
         return widget.data.overview.info;
@@ -39,7 +43,7 @@ class _PlanetScreenState extends State<PlanetScreen> {
     }
   }
 
-  String get _mainSvgAsset {
+  String get mainSvgAsset {
     switch (currentTab) {
       case TabState.overview:
         return widget.data.overview.asset;
@@ -50,7 +54,7 @@ class _PlanetScreenState extends State<PlanetScreen> {
     }
   }
 
-  Uri get _mainUrl {
+  Uri get mainUrl {
     switch (currentTab) {
       case TabState.overview:
         return widget.data.overview.url;
@@ -61,26 +65,9 @@ class _PlanetScreenState extends State<PlanetScreen> {
     }
   }
 
-  void onOverviewPressed() {
-    setState(() {
-      currentTab = TabState.overview;
-    });
-  }
-
-  void onStructurePressed() {
-    setState(() {
-      currentTab = TabState.structure;
-    });
-  }
-
-  void onSurfacePressed() {
-    setState(() {
-      currentTab = TabState.surface;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    currentTab = Provider.of<PlanetProvider>(context).currentTab;
     return PlanetShell(
       body: SingleChildScrollView(
         child: SizedBox(
@@ -94,53 +81,8 @@ class _PlanetScreenState extends State<PlanetScreen> {
                       bottom: BorderSide(color: AppColors.borderColor),
                       top: BorderSide(color: AppColors.borderColor)),
                 ),
-                child: ButtonBar(
-                  alignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    TextButtonWdiget(
-                      buttontTitle: 'OVERVIEW',
-                      onPressed: onOverviewPressed,
-                      buttonStyle: currentTab == TabState.overview
-                          ? Theme.of(context).textButtonTheme.style?.copyWith(
-                              backgroundColor: MaterialStateProperty.all(
-                                  widget.buttonBackgroundColor))
-                          : Theme.of(context).textButtonTheme.style,
-                      textStyle: currentTab == TabState.overview
-                          ? Theme.of(context).textTheme.headline5?.copyWith(
-                                color: AppColors.white,
-                              )
-                          : Theme.of(context).textTheme.headline5,
-                    ),
-                    TextButtonWdiget(
-                      buttontTitle: 'STRUCTURE',
-                      onPressed: onStructurePressed,
-                      buttonStyle: currentTab == TabState.structure
-                          ? Theme.of(context).textButtonTheme.style?.copyWith(
-                              backgroundColor: MaterialStateProperty.all(
-                                  widget.buttonBackgroundColor))
-                          : Theme.of(context).textButtonTheme.style,
-                      textStyle: currentTab == TabState.structure
-                          ? Theme.of(context).textTheme.headline5?.copyWith(
-                                color: AppColors.white,
-                              )
-                          : Theme.of(context).textTheme.headline5,
-                    ),
-                    TextButtonWdiget(
-                      buttontTitle: 'SURFACE',
-                      onPressed: onSurfacePressed,
-                      buttonStyle: currentTab == TabState.surface
-                          ? Theme.of(context).textButtonTheme.style?.copyWith(
-                              backgroundColor: MaterialStateProperty.all(
-                                  widget.buttonBackgroundColor))
-                          : Theme.of(context).textButtonTheme.style,
-                      textStyle: currentTab == TabState.surface
-                          ? Theme.of(context).textTheme.headline5?.copyWith(
-                                color: AppColors.white,
-                              )
-                          : Theme.of(context).textTheme.headline5,
-                    ),
-                  ],
-                ),
+                child: ButtonBarWidget(
+                    buttonBackgroundColor: widget.buttonBackgroundColor),
               ),
               const SizedBox(
                 height: 65,
@@ -152,7 +94,7 @@ class _PlanetScreenState extends State<PlanetScreen> {
                     Stack(
                       children: [
                         SvgPicture.asset(
-                          _mainSvgAsset,
+                          mainSvgAsset,
                           width: widget.data.assetSize,
                           height: widget.data.assetSize,
                         ),
@@ -169,20 +111,23 @@ class _PlanetScreenState extends State<PlanetScreen> {
                     const SizedBox(
                       height: 90,
                     ),
-                    Text(
-                      widget.data.title,
-                      style: Theme.of(context).textTheme.headline3,
-                    ),
-                    const SizedBox(height: 40),
-                    Text(
-                      _mainInfo,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyText1,
+                    Column(
+                      children: [
+                        PlanetTitle(
+                          widget: widget,
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        PlanetMainInfo(
+                          mainInfo: mainInfo,
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    WikipediaWidget(mainUrl: _mainUrl),
+                    WikipediaWidget(mainUrl: mainUrl),
                     const SizedBox(
                       height: 40,
                     ),
