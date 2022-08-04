@@ -12,7 +12,9 @@ class PlanetShell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: const DrawerNavigation(),
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(
+        appTitle: 'THE PLANETS',
+      ),
       body: Background(
         child: body,
       ),

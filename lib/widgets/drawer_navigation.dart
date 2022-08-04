@@ -55,8 +55,8 @@ class DrawerNavigation extends StatelessWidget {
             ),
             NavRow(
               planetSvgAsset: AppAssets.neptuneOverviewAsset,
-              route: MainNavigationRouteNames.planetUranus,
-              planetName: AppAssets.uranusTitle,
+              route: MainNavigationRouteNames.planetNeptune,
+              planetName: AppAssets.neptuneTitle,
             ),
           ],
         ));

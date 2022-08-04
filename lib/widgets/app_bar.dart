@@ -3,8 +3,8 @@ import 'package:flutter_solar_system_application/configuration/app_colors.dart';
 
 class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   AppBarWidget({
-    this.appTitle = 'THE PLANETS',
     Key? key,
+    required this.appTitle,
   }) : super(key: key);
 
   final String appTitle;
