@@ -26,11 +26,11 @@ class PlanetInfo extends StatelessWidget {
         children: [
           Text(
             leftSideText,
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           Text(
             rightSideText,
-            style: Theme.of(context).textTheme.headline2,
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
         ],
       ),
