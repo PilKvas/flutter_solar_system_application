@@ -60,29 +60,22 @@ ThemeData planetDarkTheme(BuildContext context) {
 }
 
 class AppFontConfiguration {
-  /* Fonts configurations */
-
   static const antonio = "Antonio";
-
-  static const double mainTitleSize = 40.0;
-  static const FontWeight mainTitleWeight = FontWeight.w300;
-
+  static const leagueFont = "LeagueSpartan";
+  static const double leftTextFontSize = 15;
+  static const FontWeight leftTextFontWeight = FontWeight.w700;
   static const double mainInfoFontSize = 17.0;
   static const FontWeight mainInfoFontWeight = FontWeight.w300;
-
-  static const leagueFont = "LeagueSpartan";
-
-  final FontWeight buttonBarBold = FontWeight.w700;
-
-  final double buttonBarFontSize = 11.0;
-  final double buttonBarSpacing = 1.96;
-
-  static const FontWeight leftTextFontWeight = FontWeight.w700;
-  static const double leftTextFontSize = 15;
-
-  static const FontWeight rightTextFontWeight = FontWeight.w400;
+  static const double mainTitleSize = 40.0;
+  static const FontWeight mainTitleWeight = FontWeight.w300;
   static const double rightTextFontSize = 25;
+  static const FontWeight rightTextFontWeight = FontWeight.w400;
   static const double rightTextSpacing = -0.75;
 
+  final FontWeight buttonBarBold = FontWeight.w700;
+  final double buttonBarFontSize = 11.0;
+  final double buttonBarSpacing = 1.96;
   final FontWeight regular = FontWeight.w300;
+
+  /* Fonts configurations */
 }

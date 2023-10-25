@@ -24,7 +24,6 @@ class PlanetBloc extends Bloc<PlanetEvent, PlanetState> {
         );
       } catch (e) {
         emit(PlanetError(e));
-
       }
     });
 

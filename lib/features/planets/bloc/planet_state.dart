@@ -21,9 +21,8 @@ class PlanetLoaded extends PlanetState {
   final TabState? tabState;
 }
 
-
-class PlanetError extends PlanetState{
- PlanetError(this.error);
+class PlanetError extends PlanetState {
+  PlanetError(this.error);
 
   final Object error;
 }

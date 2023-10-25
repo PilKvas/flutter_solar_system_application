@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_solar_system_application/features/planets/widgets/widgets.dart';
+import 'package:lottie/lottie.dart';
 
 class PlanetShell extends StatelessWidget {
   const PlanetShell({Key? key, required this.body}) : super(key: key);
@@ -18,17 +19,15 @@ class PlanetShell extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         actions: [
-          Builder(
-            builder: (context) {
-              return IconButton(
-                icon: Image.asset('assets/solar-system.png'),
-                onPressed: () {
-                  Scaffold.of(context).openEndDrawer();
-                },
-                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-              );
-            }
-          )
+          Builder(builder: (context) {
+            return IconButton(
+              icon: Lottie.asset('assets/icon.json', reverse: true),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          })
         ],
       ),
       body: Background(

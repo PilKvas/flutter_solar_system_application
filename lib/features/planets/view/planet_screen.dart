@@ -103,9 +103,8 @@ class _PlanetScreenState extends State<PlanetScreen> {
                             onPressed: () {
                               context.read<PlanetBloc>().add(
                                     StructureTabSelect(
-                                      planet: state.planets,
-                                      planetPlace: widget.planetPlace,
-                                    ),
+                                        planet: state.planets,
+                                        planetPlace: widget.planetPlace),
                                   );
                             },
                             child: Text(

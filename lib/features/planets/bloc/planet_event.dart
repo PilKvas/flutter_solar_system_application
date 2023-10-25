@@ -5,19 +5,21 @@ part of 'planet_bloc.dart';
 abstract class PlanetEvent {}
 
 class PlanetLoadData extends PlanetEvent {
-  final int planetPlace;
   PlanetLoadData({
     required this.planetPlace,
   });
+
+  final int planetPlace;
 }
 
 class SelectTab extends PlanetEvent {
-  final int planetPlace;
-  final List<PlanetData> planet;
   SelectTab({
     required this.planetPlace,
     required this.planet,
   });
+
+  final List<PlanetData> planet;
+  final int planetPlace;
 }
 
 class OverviewTabSelect extends SelectTab {

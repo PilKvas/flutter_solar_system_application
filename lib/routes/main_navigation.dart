@@ -7,20 +7,21 @@ import 'package:flutter_solar_system_application/theme/app_colors.dart';
 abstract class MainNavigationRouteNames {
   MainNavigationRouteNames._();
 
-  static const planetMercury = '/';
-  static const planetVenus = 'PlanetVenusScreen';
   static const planetEarth = 'PlanetEarthScreen';
-  static const planetMars = 'PlanetMarsScreen';
   static const planetJupiter = 'PlanetJupiterScreen';
+  static const planetMars = 'PlanetMarsScreen';
+  static const planetMercury = '/';
+  static const planetNeptune = 'PlanetNeptuneScreen';
   static const planetSaturn = 'PlanetSaturnScreen';
   static const planetUranus = 'PlanetUranusScreen';
-  static const planetNeptune = 'PlanetNeptuneScreen';
+  static const planetVenus = 'PlanetVenusScreen';
 }
 
 /* Блок декларации роутинга */
 
 class MainNavigation {
   final initialRoute = MainNavigationRouteNames.planetMercury;
+
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.planetMercury: (_) => const PlanetScreen(
           planetPlace: 0,

@@ -1,16 +1,4 @@
-
-
 class PlanetData {
-  String name;
-  Overview overview;
-  Overview structure;
-  Overview geology;
-  String rotation;
-  String revolution;
-  String radius;
-  String temperature;
-  Images images;
-
   PlanetData({
     required this.name,
     required this.overview,
@@ -37,6 +25,16 @@ class PlanetData {
     );
   }
 
+  Overview geology;
+  Images images;
+  String name;
+  Overview overview;
+  String radius;
+  String revolution;
+  String rotation;
+  Overview structure;
+  String temperature;
+
   @override
   String toString() {
     return 'PlanetData(name: $name, overview: $overview, structure: $structure, geology: $geology, rotation: $rotation, revolution: $revolution, radius: $radius, temperature: $temperature, images: $images)';
@@ -44,9 +42,6 @@ class PlanetData {
 }
 
 class Overview {
-  String content;
-  String source;
-
   Overview({required this.content, required this.source});
 
   factory Overview.fromJson(Map<String, dynamic> json) {
@@ -55,13 +50,12 @@ class Overview {
       source: json['source'] ?? '',
     );
   }
+
+  String content;
+  String source;
 }
 
 class Images {
-  String planet;
-  String internal;
-  String geology;
-
   Images({required this.planet, required this.internal, required this.geology});
 
   factory Images.fromJson(Map<String, dynamic> json) {
@@ -71,4 +65,8 @@ class Images {
       geology: json['geology'] ?? '',
     );
   }
+
+  String geology;
+  String internal;
+  String planet;
 }

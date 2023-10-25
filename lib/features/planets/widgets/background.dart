@@ -5,8 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 /* Ответственность за статический фон приложения, является корневым для тела приложения*/
 
 class Background extends StatelessWidget {
-  final Widget child;
   const Background({Key? key, required this.child}) : super(key: key);
+
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {

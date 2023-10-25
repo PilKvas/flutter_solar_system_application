@@ -8,7 +8,6 @@ import 'package:flutter_solar_system_application/repository/models/planet.dart';
 import 'package:flutter_solar_system_application/repository/planet_repository_interface.dart';
 
 class PlanetRepository implements PlanetRepositoryInterface {
-
   @override
   Future<List<PlanetData>> getPlanet() async {
     String jsonString = await rootBundle.loadString('assets/data.json');
