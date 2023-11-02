@@ -1,21 +1,11 @@
+// import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_solar_system_application/main_navigation.dart';
-import 'package:flutter_solar_system_application/widgets/app_theme.dart';
+import 'package:flutter_solar_system_application/solar_system_app.dart';
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  static final mainNavigation = MainNavigation();
-
-  const MyApp({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Solar System',
-      initialRoute: mainNavigation.initialRoute,
-      routes: mainNavigation.routes,
-      theme: planetTheme(),
-    );
-  }
+void main() async {
+  //  final dio = Dio();
+  // final response = await dio.get(
+  //     'https://api.nasa.gov/planetary/apod?api_key=HapEuV1Wkteb5Ok3fJEvuVDdaYgLFgTLSw8uEw4P&count=100');
+  // print(response);
+  runApp(const SolarSystemApp());
 }
