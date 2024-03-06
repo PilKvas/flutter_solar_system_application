@@ -1,15 +1,11 @@
 import "package:flutter/material.dart";
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_solar_system_application/features/planets/bloc/planet_bloc.dart';
 import 'package:flutter_solar_system_application/features/planets/widgets/widgets.dart';
+import 'package:flutter_solar_system_application/repository/models/models.dart';
 import 'package:flutter_solar_system_application/theme/app_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-enum TabState {
-  overview,
-  structure,
-  surface,
-}
 
 class PlanetScreen extends StatefulWidget {
   const PlanetScreen({
@@ -53,8 +49,9 @@ class _PlanetScreenState extends State<PlanetScreen> {
                     Container(
                       decoration: const BoxDecoration(
                         border: Border(
-                            bottom: BorderSide(color: AppColors.borderColor),
-                            top: BorderSide(color: AppColors.borderColor)),
+                          bottom: BorderSide(color: AppColors.borderColor),
+                          top: BorderSide(color: AppColors.borderColor),
+                        ),
                       ),
                       child: ButtonBar(
                         alignment: MainAxisAlignment.spaceEvenly,
@@ -63,27 +60,22 @@ class _PlanetScreenState extends State<PlanetScreen> {
                             onPressed: () {
                               context.read<PlanetBloc>().add(
                                     OverviewTabSelect(
-                                        planet: state.planets,
-                                        planetPlace: widget.planetPlace),
+                                      planet: state.planets,
+                                      planetPlace: widget.planetPlace,
+                                    ),
                                   );
                             },
                             style: state.tabState == TabState.overview
-                                ? Theme.of(context)
-                                    .textButtonTheme
-                                    .style
-                                    ?.copyWith(
-                                        backgroundColor:
-                                            MaterialStateProperty.all(
-                                      widget.planetColor,
-                                    ))
+                                ? Theme.of(context).textButtonTheme.style?.copyWith(
+                                      backgroundColor: MaterialStateProperty.all(
+                                        widget.planetColor,
+                                      ),
+                                    )
                                 : Theme.of(context).textButtonTheme.style,
                             child: Text(
                               'OVERVIEW',
                               style: state.tabState == TabState.overview
-                                  ? Theme.of(context)
-                                      .textTheme
-                                      .labelSmall
-                                      ?.copyWith(
+                                  ? Theme.of(context).textTheme.labelSmall?.copyWith(
                                         color: AppColors.white,
                                       )
                                   : Theme.of(context).textTheme.labelSmall,
@@ -91,29 +83,20 @@ class _PlanetScreenState extends State<PlanetScreen> {
                           ),
                           TextButton(
                             style: state.tabState == TabState.structure
-                                ? Theme.of(context)
-                                    .textButtonTheme
-                                    .style
-                                    ?.copyWith(
-                                        backgroundColor:
-                                            MaterialStateProperty.all(
+                                ? Theme.of(context).textButtonTheme.style?.copyWith(
+                                        backgroundColor: MaterialStateProperty.all(
                                       widget.planetColor,
                                     ))
                                 : Theme.of(context).textButtonTheme.style,
                             onPressed: () {
                               context.read<PlanetBloc>().add(
-                                    StructureTabSelect(
-                                        planet: state.planets,
-                                        planetPlace: widget.planetPlace),
+                                    StructureTabSelect(planet: state.planets, planetPlace: widget.planetPlace),
                                   );
                             },
                             child: Text(
                               'STRUCTURE',
                               style: state.tabState == TabState.structure
-                                  ? Theme.of(context)
-                                      .textTheme
-                                      .labelSmall
-                                      ?.copyWith(
+                                  ? Theme.of(context).textTheme.labelSmall?.copyWith(
                                         color: AppColors.white,
                                       )
                                   : Theme.of(context).textTheme.labelSmall,
@@ -121,12 +104,8 @@ class _PlanetScreenState extends State<PlanetScreen> {
                           ),
                           TextButton(
                             style: state.tabState == TabState.surface
-                                ? Theme.of(context)
-                                    .textButtonTheme
-                                    .style
-                                    ?.copyWith(
-                                        backgroundColor:
-                                            MaterialStateProperty.all(
+                                ? Theme.of(context).textButtonTheme.style?.copyWith(
+                                        backgroundColor: MaterialStateProperty.all(
                                       widget.planetColor,
                                     ))
                                 : Theme.of(context).textButtonTheme.style,
@@ -139,10 +118,7 @@ class _PlanetScreenState extends State<PlanetScreen> {
                             child: Text(
                               'SURFACE',
                               style: state.tabState == TabState.surface
-                                  ? Theme.of(context)
-                                      .textTheme
-                                      .labelSmall
-                                      ?.copyWith(
+                                  ? Theme.of(context).textTheme.labelSmall?.copyWith(
                                         color: AppColors.white,
                                       )
                                   : Theme.of(context).textTheme.labelSmall,
@@ -161,17 +137,18 @@ class _PlanetScreenState extends State<PlanetScreen> {
                           Stack(
                             alignment: Alignment.bottomCenter,
                             children: [
-                              SvgPicture.asset(
-                                state.mainSvg ?? "Ошибка",
-                                width: mainSizeSvgAsset.width,
-                                height: mainSizeSvgAsset.height,
+                              Animate(
+                                effects: const [ScaleEffect(duration: Duration(seconds: 1))],
+                                child: SvgPicture.asset(
+                                  state.mainSvg ?? "Ошибка",
+                                  width: mainSizeSvgAsset.width,
+                                  height: mainSizeSvgAsset.height,
+                                ),
                               ),
                               Opacity(
-                                opacity:
-                                    state.tabState == TabState.surface ? 1 : 0,
+                                opacity: state.tabState == TabState.surface ? 1 : 0,
                                 child: Image.asset(
-                                  state.planets[widget.planetPlace].images
-                                      .geology,
+                                  state.planets[widget.planetPlace].images.geology,
                                   width: mainSizeSvgAsset.width,
                                   height: mainSizeSvgAsset.height,
                                 ),
@@ -201,26 +178,22 @@ class _PlanetScreenState extends State<PlanetScreen> {
                             children: [
                               PlanetInfo(
                                 leftSideText: 'ROTATION TIME',
-                                rightSideText:
-                                    state.planets[widget.planetPlace].rotation,
+                                rightSideText: state.planets[widget.planetPlace].rotation,
                                 borderInfoColor: widget.planetColor,
                               ),
                               PlanetInfo(
                                 leftSideText: 'REVOLUTION TIME',
-                                rightSideText: state
-                                    .planets[widget.planetPlace].revolution,
+                                rightSideText: state.planets[widget.planetPlace].revolution,
                                 borderInfoColor: widget.planetColor,
                               ),
                               PlanetInfo(
                                 leftSideText: 'RADIUS',
-                                rightSideText:
-                                    state.planets[widget.planetPlace].radius,
+                                rightSideText: state.planets[widget.planetPlace].radius,
                                 borderInfoColor: widget.planetColor,
                               ),
                               PlanetInfo(
                                 leftSideText: 'AVERAGE TEMP.',
-                                rightSideText: state
-                                    .planets[widget.planetPlace].temperature,
+                                rightSideText: state.planets[widget.planetPlace].temperature,
                                 borderInfoColor: widget.planetColor,
                               ),
                             ],

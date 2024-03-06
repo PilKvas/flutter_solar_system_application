@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_solar_system_application/features/planets/view/view.dart';
 import 'package:flutter_solar_system_application/repository/models/planet.dart';
-import 'package:flutter_solar_system_application/repository/planet_repository_impl.dart';
+import 'package:flutter_solar_system_application/repository/planet_repository.dart';
 import 'package:meta/meta.dart';
 
 part 'planet_event.dart';
+
 part 'planet_state.dart';
 
 class PlanetBloc extends Bloc<PlanetEvent, PlanetState> {
@@ -37,16 +37,18 @@ class PlanetBloc extends Bloc<PlanetEvent, PlanetState> {
         ),
       );
     });
-    on<StructureTabSelect>((event, emit) async {
-      emit(
-        PlanetLoaded(
-          event.planet,
-          tabState: TabState.structure,
-          mainInfo: event.planet[event.planetPlace].structure.content,
-          mainSvg: event.planet[event.planetPlace].images.internal,
-        ),
-      );
-    });
+    on<StructureTabSelect>(
+      (event, emit) async {
+        emit(
+          PlanetLoaded(
+            event.planet,
+            tabState: TabState.structure,
+            mainInfo: event.planet[event.planetPlace].structure.content,
+            mainSvg: event.planet[event.planetPlace].images.internal,
+          ),
+        );
+      },
+    );
 
     on<SurfaceTabSelect>((event, emit) async {
       emit(

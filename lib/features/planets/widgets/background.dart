@@ -12,18 +12,19 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: AppColors.background,
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            SvgPicture.asset(
-              "assets/background-stars.svg",
-              fit: BoxFit.cover,
-            ),
-            child,
-          ],
-        ));
+      color: AppColors.background,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          SvgPicture.asset(
+            "assets/background-stars.svg",
+            fit: BoxFit.cover,
+          ),
+          child,
+        ],
+      ),
+    );
   }
 }

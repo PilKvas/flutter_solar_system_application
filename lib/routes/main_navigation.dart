@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_solar_system_application/features/planets/view/view.dart';
+import 'package:flutter_solar_system_application/features/space_images.dart/view/space_images.dart';
+import 'package:flutter_solar_system_application/features/space_images.dart/widgets/bottom_bar.dart';
 import 'package:flutter_solar_system_application/theme/app_colors.dart';
 
 /* Хранение именных роутов */
@@ -15,12 +17,14 @@ abstract class MainNavigationRouteNames {
   static const planetSaturn = 'PlanetSaturnScreen';
   static const planetUranus = 'PlanetUranusScreen';
   static const planetVenus = 'PlanetVenusScreen';
+  static const spaceImagesList = 'SpaceImagesList';
+  static const bottomBar = 'BottomBar';
 }
 
 /* Блок декларации роутинга */
 
 class MainNavigation {
-  final initialRoute = MainNavigationRouteNames.planetMercury;
+  final initialRoute = MainNavigationRouteNames.bottomBar;
 
   final routes = <String, Widget Function(BuildContext)>{
     MainNavigationRouteNames.planetMercury: (_) => const PlanetScreen(
@@ -55,5 +59,8 @@ class MainNavigation {
           planetPlace: 7,
           planetColor: AppColors.neptuneColor,
         ),
+    MainNavigationRouteNames.spaceImagesList: (_) => const SpaceImagesList(),
+    MainNavigationRouteNames.bottomBar: (_) =>
+        const BottomNavigationBarExample(),
   };
 }

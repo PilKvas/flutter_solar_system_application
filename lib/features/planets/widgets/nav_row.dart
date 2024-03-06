@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_solar_system_application/features/planets/bloc/planet_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -29,7 +30,7 @@ class NavRow extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 40),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, route);
+                    Navigator.pushNamed(context, route);
                   },
                   child: Column(
                     children: [
@@ -39,7 +40,9 @@ class NavRow extends StatelessWidget {
                           height: svgPlanetSize.height,
                           width: svgPlanetSize.width,
                         ),
-                      ),
+                      )
+                          .animate()
+                          .scale(duration: const Duration(milliseconds: 550)),
                       const SizedBox(
                         height: 10,
                       ),

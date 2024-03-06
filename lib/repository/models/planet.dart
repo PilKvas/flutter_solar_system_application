@@ -70,3 +70,10 @@ class Images {
   String internal;
   String planet;
 }
+
+
+enum TabState {
+  overview,
+  structure,
+  surface,
+}

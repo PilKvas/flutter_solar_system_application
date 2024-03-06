@@ -3,6 +3,10 @@ import 'package:flutter_solar_system_application/theme/app_colors.dart';
 
 ThemeData planetDarkTheme(BuildContext context) {
   return ThemeData(
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      backgroundColor: AppColors.background,
+    ),
     scaffoldBackgroundColor: AppColors.background,
     drawerTheme: DrawerThemeData(
         backgroundColor: AppColors.background,
@@ -24,6 +28,12 @@ ThemeData planetDarkTheme(BuildContext context) {
       ),
       titleLarge: TextStyle(
         fontSize: 40,
+        fontWeight: FontWeight.w400,
+        fontFamily: AppFontConfiguration.antonio,
+        color: AppColors.white,
+      ),
+      titleSmall: TextStyle(
+        fontSize: 15,
         fontWeight: FontWeight.w400,
         fontFamily: AppFontConfiguration.antonio,
         color: AppColors.white,
@@ -57,6 +67,21 @@ ThemeData planetDarkTheme(BuildContext context) {
       ),
     ),
   );
+}
+
+extension CustomTextTheme on TextTheme {
+  TextStyle get articleExplenataion => const TextStyle(
+        color: Color.fromARGB(255, 255, 255, 255),
+        fontSize: 16,
+        height: 1.2,
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w400,
+      );
+
+  TextStyle get articleDate => const TextStyle(
+        color: AppColors.lightGrey,
+        fontSize: 16,
+      );
 }
 
 class AppFontConfiguration {
